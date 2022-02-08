@@ -1,1 +1,1 @@
-# prefect-collection-cookiecutter
+# prefect-collection-template
