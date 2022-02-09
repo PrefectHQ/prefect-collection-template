@@ -1,0 +1,7 @@
+pytest
+black
+flake8
+mypy
+mkdocs
+mkdocs-material
+mkdocstrings

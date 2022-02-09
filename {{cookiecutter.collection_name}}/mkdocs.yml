@@ -1,0 +1,34 @@
+site_name: {{ cookiecutter.collection_name }}
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: blue
+markdown_extensions:
+    - admonition
+    - attr_list
+    - codehilite
+    - md_in_html
+    - meta
+    - pymdownx.highlight:
+        use_pygments: true
+    - pymdownx.superfences
+    - pymdownx.tabbed
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          rendering:
+            show_root_heading: True
+            show_object_full_path: False
+            show_category_heading: False
+            show_bases: False
+            heading_level: 1
+      watch:
+        - {{ cookiecutter.collection_slug }}/
+nav:
+    - Home: index.md
+    - Tasks: tasks.md
+    - Flows: flows.md
+
