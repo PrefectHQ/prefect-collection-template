@@ -19,7 +19,7 @@ These tasks are designed to work with Prefect 2.0. For more information about ho
 Install `prefect` and `{{ cookiecutter.collection_name }}`
 
 ```bash
-pip install "prefect>=2.0a9" prefect-aws
+pip install "prefect>=2.0a9" {{ cookiecutter.collection_name }}
 ```
 
 ### Write and run a flow

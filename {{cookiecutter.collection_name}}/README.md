@@ -27,7 +27,7 @@ To ensure that your collection bootstrap was successful you can perform the foll
    mkdocs serve
    ```
 
-If all those actions were successful, then you are all ready to start creating your Prefect collection!
+You are now ready to start creating your Prefect collection!
 
 ## Developing tasks and flows
 

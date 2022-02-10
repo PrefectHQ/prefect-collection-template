@@ -1,5 +1,9 @@
 from prefect import flow
-from {{ cookiecutter.collection_slug }}.tasks import hello_{{ cookiecutter.collection_slug }}, goodbye_{{ cookiecutter.collection_slug }}
+from {{ cookiecutter.collection_slug }}.tasks import (
+    hello_{{ cookiecutter.collection_slug }},
+    goodbye_{{ cookiecutter.collection_slug }},
+)
+
 
 def test_hello_{{ cookiecutter.collection_slug }}():
     @flow
