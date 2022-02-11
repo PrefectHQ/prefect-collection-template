@@ -14,7 +14,7 @@ setup(
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email="{{ cookiecutter.email }}",
     keywords="prefect",
-    url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.collection_name }}",
+    url="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}",
     long_description=readme,
     long_description_content_type="text/markdown",
     version="{{ cookiecutter.version }}",

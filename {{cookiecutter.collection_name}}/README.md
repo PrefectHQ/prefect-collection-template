@@ -39,7 +39,19 @@ This collection has been setup to with [mkdocs](https://www.mkdocs.org/) for aut
 
 ## Development lifecycle
 
-This collection comes with [GitHub Actions](https://docs.github.com/en/actions) for testing and linting. To add additional actions, you can add jobs in the `.github/workflows` folder.
+### CI Pipeline
+
+This collection comes with [GitHub Actions](https://docs.github.com/en/actions) for testing and linting. To add additional actions, you can add jobs in the `.github/workflows` folder. On PR, the pipeline will run linting via [`black`](https://black.readthedocs.io/en/stable/) and [`flake8`](https://flake8.pycqa.org/en/latest/) and unit tests via `pytest`.
+
+### Package and Publish
+
+GitHub actions will also handle packaging and publishing of your collection to [PyPI](https://pypi.org/) so other Prefect users can your collection in their flows. 
+
+In order to publish to PyPI, you'll need a PyPI account and generate an API token to authenticate with PyPI when publishing new versions of your collection. The [PyPI documentation](https://pypi.org/help/#apitoken) outlines the steps needed to get an API token.
+
+Once you've obtained a PyPI API token, [create a GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `PYPI_API_TOKEN`.
+
+There is also a GitHub Action that performs a test publish to [test PyPI](https://test.pypi.org/) to allow for a test deployment without affecting PyPI. You will need a separate token for test PyPI which can be saved in a GitHub secret names `TEST_PYPI_API_TOKEN`
 
 ## Further guidance
 

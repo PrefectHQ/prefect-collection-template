@@ -1,9 +1,8 @@
 name: Build & Release
 
 on:
-  push:
-    tags:
-      - "v*"
+  release:
+    types: [published]
 
 jobs:
   build-release:
@@ -24,7 +23,7 @@ jobs:
 
       - name: Build a binary wheel and a source tarball
         run: |
-          python -m pip build --sdist --wheel --outdir dist/
+          python -m build --sdist --wheel --outdir dist/
 
       - name: Publish build artifacts
         uses: actions/upload-artifact@v2

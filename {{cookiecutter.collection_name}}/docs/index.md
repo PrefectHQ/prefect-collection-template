@@ -43,7 +43,7 @@ example_flow()
 If you'd like to install a version of {{ cookiecutter.collection_name }} for development, first clone the {{ cookiecutter.collection_name }} repository and then install in editable mode with `pip`:
 
 ```bash
-git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.collection_name }}.git
+git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}.git
 cd {{ cookiecutter.collection_name }}/
 pip install -e ".[dev]"
 ```

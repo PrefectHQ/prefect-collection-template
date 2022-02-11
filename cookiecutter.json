@@ -1,11 +1,10 @@
 {
     "full_name": "Arthur Dent",
     "email": "arthur.dent@example.com",
-    "github_username": "arthur_dent",
+    "github_organization": "arthur_dent",
     "collection_name": "prefect-collection",
     "collection_slug": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
     "collection_short_description": "Prefect Collection Template contains all the boilerplate that you need to create a Prefect collection.",
-    "pypi_username": "{{ cookiecutter.github_username }}",
     "version": "0.1.0",
     "_copy_without_render": [".github/workflows/*.yml"]
 }
