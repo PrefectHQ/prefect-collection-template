@@ -44,6 +44,8 @@ If you'd like to install a version of {{ cookiecutter.collection_name }} for dev
 
 ```bash
 git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}.git
+
 cd {{ cookiecutter.collection_name }}/
+
 pip install -e ".[dev]"
 ```

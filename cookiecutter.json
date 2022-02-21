@@ -5,6 +5,5 @@
     "collection_name": "prefect-collection",
     "collection_slug": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
     "collection_short_description": "Prefect Collection Template contains all the boilerplate that you need to create a Prefect collection.",
-    "version": "0.1.0",
     "_copy_without_render": [".github/workflows/*.yml"]
 }

@@ -1,4 +1,5 @@
 from setuptools import find_packages, setup
+import versioneer
 
 install_requires = open("requirements.txt").read().strip().split("\n")
 dev_requires = open("requirements_dev.txt").read().strip().split("\n")
@@ -17,7 +18,8 @@ setup(
     url="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}",
     long_description=readme,
     long_description_content_type="text/markdown",
-    version="{{ cookiecutter.version }}",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     packages=find_packages(exclude=("tests", "docs")),
     python_requires=">=3.7",
     install_requires=install_requires,

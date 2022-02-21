@@ -1,8 +1,9 @@
 name: Build & Release
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build-release:
@@ -69,3 +70,19 @@ jobs:
           branch: docs
           folder: site
 
+  publish-release:
+    name: Publish release to PyPI
+    needs: [build-release]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-package
+          path: './dist'
+
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
