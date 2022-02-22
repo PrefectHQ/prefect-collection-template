@@ -4,7 +4,6 @@ from contextlib import contextmanager
 import os
 import subprocess
 import shlex
-import pytest
 
 
 @contextmanager
