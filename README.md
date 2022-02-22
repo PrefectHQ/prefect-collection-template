@@ -17,3 +17,22 @@ cookiecutter https://github.com/PrefectHQ/prefect-collection-template
 ```
 
 Refer to the README.md in the generated project for how to get started developing Prefect tasks and flow.
+
+
+## Contributing
+
+To start contributing to the prefect-collection-template repository, run:
+
+```bash
+pip install -r requirements_dev.txt
+```
+
+To run tests, from the base directory of the repository, run:
+```bash
+pytest tests
+```
+
+Note that an Orion database setup (at least once) is required; to setup:
+```
+prefect orion start
+```
