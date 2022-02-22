@@ -2,10 +2,13 @@ from setuptools import find_packages, setup
 
 import versioneer
 
-install_requires = open("requirements.txt").read().strip().split("\n")
-dev_requires = open("requirements_dev.txt").read().strip().split("\n")
 
-readme = ""
+with open("requirements.txt") as install_requires_file:
+    install_requires = install_requires_file.read().strip().split("\n")
+
+with open("requirements_dev.txt") as dev_requires_file:
+    dev_requires = dev_requires_file.read().strip().split("\n")
+
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
