@@ -12,21 +12,21 @@ We recommend using a Python virtual environment manager such as pipenv, conda or
 
 ### Project setup
 
-To setup your project run the following steps:
-
-1. Create an editable install of your project
+To setup your project run the following:
    ```bash
+   # Create an editable install of your project
    pip install -e ".[dev]"
-   ```
-2. Install `pre-commit`
-   ```bash
+
+   # Configure pre-commit hooks
    pre-commit install
    ```
-3. Run the tests for the example tasks and flow in the bootstrapped collection
+
+To verify the set up was successful you can run the following:
+- Run the tests for the example tasks and flow in the bootstrapped collection
    ```bash
    pytest tests
    ```
-4. Serve the bootstrapped example docs with `mkdocs`
+- Serve the bootstrapped example docs with `mkdocs`
    ```bash
    mkdocs serve
    ```
