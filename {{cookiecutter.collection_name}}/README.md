@@ -10,19 +10,23 @@ Requires an installation of Python 3.7+
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
 
-### Verify collection bootstrap
+### Project setup
 
-To ensure that your collection bootstrap was successful you can perform the following steps:
+To setup your project run the following steps:
 
 1. Create an editable install of your project
    ```bash
    pip install -e ".[dev]
    ```
-2. Run the tests for the example tasks and flow in the bootstrapped collection
+2. Install `pre-commit`
+   ```bash
+   pre-commit install
+   ```
+3. Run the tests for the example tasks and flow in the bootstrapped collection
    ```bash
    pytest tests
    ```
-3. Serve the bootstrapped example docs with `mkdocs`
+4. Serve the bootstrapped example docs with `mkdocs`
    ```bash
    mkdocs serve
    ```
