@@ -5,3 +5,5 @@ mypy
 mkdocs
 mkdocs-material
 mkdocstrings
+isort
+pre-commit
