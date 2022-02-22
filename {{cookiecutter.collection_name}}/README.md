@@ -16,7 +16,7 @@ To setup your project run the following steps:
 
 1. Create an editable install of your project
    ```bash
-   pip install -e ".[dev]
+   pip install -e ".[dev]"
    ```
 2. Install `pre-commit`
    ```bash
