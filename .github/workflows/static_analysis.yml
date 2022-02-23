@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate collection
         run: |
-          cookiecutter --no-input .
+          cookiecutter --no-input -f .
 
 
       - name: Run pre-commit on generated collection

@@ -30,7 +30,7 @@ jobs:
 
       - name: Run tests
         env:
-          PREFECT_ORION_DATABASE_CONNECTION_URL: "sqlite+aiosqlite:///./orion-tests.db"
+          PREFECT_ORION_DATABASE_CONNECTION_URL: "sqlite+aiosqlite:/// $(pwd)/orion-tests.db"
         run: |
           prefect orion database reset -y
           pytest tests -vv
