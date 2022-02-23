@@ -1,16 +1,7 @@
 <!-- Thanks for contributing to {{cookiecutter.collection_name}}! 🎉-->
 
 ## Summary
-<!-- A sentence summarizing the PR -->
+<!-- A brief summary explaining the purpose of this PR -->
 
-## Changes
-<!-- What does this PR change? -->
-
-## Importance
-<!-- Why is this PR important? -->
-
-## Checklist
-<!-- PRs will not be reviewed unless these boxes are checked -->
-This PR:
-- [ ] adds new tests (if appropriate)
-- [ ] updates docstrings for any new functions or function arguments
+## Relevant Issue(s)
+<!-- If this PR addresses any open issues, please let us know which one here -->
