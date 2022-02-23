@@ -29,8 +29,7 @@ jobs:
           python -m pip install --upgrade --upgrade-strategy eager -r requirements_dev.txt
 
       - name: Run tests
-        env:
-          PREFECT_ORION_DATABASE_CONNECTION_URL: "sqlite+aiosqlite:///$(pwd)/orion-tests.db"
         run: |
+          export PREFECT_ORION_DATABASE_CONNECTION_URL="sqlite+aiosqlite:///$(pwd)/orion-tests.db"
           prefect orion database reset -y
           pytest tests -vv
