@@ -32,7 +32,7 @@ To run tests, from the base directory of the repository, run:
 pytest tests
 ```
 
-Note that an Orion database setup (at least once) is required; to setup:
+Note that an Orion database setup (at least once) is required to run tests; to setup:
 ```
 prefect orion start
 ```
