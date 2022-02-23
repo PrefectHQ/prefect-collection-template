@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   pre-commit-checks:
-    name: Pre-commit checks
+    name: Pre-commit checks on generated project
     runs-on: ubuntu-latest
 
     steps:
