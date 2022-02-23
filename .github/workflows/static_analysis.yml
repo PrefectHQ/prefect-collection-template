@@ -24,11 +24,13 @@ jobs:
 
 
       - name: Generate collection
+        # Generates a collection non-interactively with the default values 
         run: |
-          cookiecutter --no-input -f .
+          cookiecutter --no-input --overwrite-if-exists .
 
 
       - name: Run pre-commit on generated collection
+        # Runs pre-commit on the generated collection to ensure the code styling is compliant
         run: |
           cd prefect-collection
           pre-commit run --show-diff-on-failure --color=always --all-files
