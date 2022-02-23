@@ -1,0 +1,36 @@
+name: Static analysis
+
+on: [pull_request]
+
+jobs:
+  pre-commit-checks:
+    name: Pre-commit checks on generated project
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pre-commit cookiecutter
+
+
+      - name: Generate collection
+        # Generates a collection non-interactively with the default values 
+        run: |
+          cookiecutter --no-input --overwrite-if-exists .
+
+
+      - name: Run pre-commit on generated collection
+        # Runs pre-commit on the generated collection to ensure the code styling is compliant
+        run: |
+          cd prefect-collection
+          pre-commit run --show-diff-on-failure --color=always --all-files

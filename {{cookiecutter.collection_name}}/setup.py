@@ -2,7 +2,6 @@ from setuptools import find_packages, setup
 
 import versioneer
 
-
 with open("requirements.txt") as install_requires_file:
     install_requires = install_requires_file.read().strip().split("\n")
 

@@ -21,4 +21,3 @@ def goodbye_{{ cookiecutter.collection_slug }}() -> str:
         A farewell for your collection
     """
     return "Goodbye, {{ cookiecutter.collection_name }}!"
-
