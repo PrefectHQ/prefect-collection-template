@@ -1,3 +1,4 @@
+from cookiecutter.exceptions import FailedHookException
 from cookiecutter.utils import rmtree
 from contextlib import contextmanager
 import os
@@ -25,7 +26,8 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
     try:
         yield result
     finally:
-        rmtree(str(result.project))
+        if result.project is not None:
+            rmtree(str(result.project))
 
 
 def run_inside_dir(command, dirpath):
@@ -72,3 +74,15 @@ def test_bake_and_run_tests(cookies):
         assert run_inside_dir('pip install -e ".[dev]"', str(result.project)) == 0
         assert run_inside_dir("pytest tests", str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
+
+
+def test_bake_with_underscore_name_fail(cookies):
+    context = {"collection_name": "prefect_awesome"}
+    with bake_in_temp_dir(cookies, extra_context=context) as result:
+        assert isinstance(result.exception, FailedHookException)
+
+
+def test_bake_with_hyphen_slug_fail(cookies):
+    context = {"collection_slug": "prefect-awesome"}
+    with bake_in_temp_dir(cookies, extra_context=context) as result:
+        assert isinstance(result.exception, FailedHookException)
