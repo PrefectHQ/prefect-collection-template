@@ -1,9 +1,1 @@
-pytest
-black
-flake8
-mypy
-mkdocs
-mkdocs-material
-mkdocstrings
-isort
-pre-commit
+prefect[dev]
