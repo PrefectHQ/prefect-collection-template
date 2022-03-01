@@ -7,3 +7,5 @@ mkdocs-material
 mkdocstrings
 isort
 pre-commit
+pytest-asyncio
+mock; python_version < '3.8'
