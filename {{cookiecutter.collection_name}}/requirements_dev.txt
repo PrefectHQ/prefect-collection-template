@@ -10,4 +10,3 @@ pre-commit
 pytest-asyncio
 mock; python_version < '3.8'
 interrogate
-git st
