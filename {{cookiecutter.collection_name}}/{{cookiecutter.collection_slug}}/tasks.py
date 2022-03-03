@@ -1,3 +1,4 @@
+"""This is an example tasks module"""
 from prefect import task
 
 
