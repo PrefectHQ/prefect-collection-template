@@ -1,3 +1,4 @@
+"""This is an example flows module"""
 from prefect import flow
 
 from {{ cookiecutter.collection_slug }}.tasks import (
