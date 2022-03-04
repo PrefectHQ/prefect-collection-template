@@ -16,7 +16,7 @@ These tasks are designed to work with Prefect 2.0. For more information about ho
 
 ### Installation
 
-Install `{{ cookiecutter.collection_name }}`
+Install `{{ cookiecutter.collection_name }}` with `pip`
 
 ```bash
 pip install {{ cookiecutter.collection_name }}
@@ -30,6 +30,8 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     goodbye_{{ cookiecutter.collection_slug }},
     hello_{{ cookiecutter.collection_slug }},
 )
+
+
 @flow
 def example_flow():
     hello_{{ cookiecutter.collection_slug }}
@@ -39,10 +41,6 @@ example_flow()
 ```
 
 ## Resources
-
-If you encounter and bugs while using `{{ cookiecutter.collection_name }}`, feel free to open an issue in the `{{ cookiecutter.collection_name }}` repository.
-
-If you have any questions or issues while using `{{ cookiecutter.collection_name }}`, you can find help in either the Prefect Discourse forum or the Prefect Slack community
 
 If you encounter and bugs while using `{{ cookiecutter.collection_name }}`, feel free to open an issue in the [{{ cookiecutter.collection_name }}](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) repository.
 
@@ -58,4 +56,7 @@ git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecut
 cd {{ cookiecutter.collection_name }}/
 
 pip install -e ".[dev]"
+
+# Install linting pre-commit hooks
+pre-commit install
 ```
