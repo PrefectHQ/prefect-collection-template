@@ -1,9 +1,9 @@
 {
-    "full_name": "Arthur Dent",
-    "email": "arthur.dent@example.com",
-    "github_organization": "arthur_dent",
+    "full_name": "Prefect Technologies, Inc.",
+    "email": "help@prefect.io",
+    "github_organization": "PrefectHQ",
     "collection_name": "prefect-collection",
     "collection_slug": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "collection_short_description": "Prefect Collection Template contains all the boilerplate that you need to create a Prefect collection.",
+    "collection_short_description": "Prefect tasks and subflows for interacting with ",
     "_copy_without_render": [".github/workflows/*.yml"]
 }
