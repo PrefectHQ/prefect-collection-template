@@ -20,11 +20,11 @@ To setup your project run the following:
    ```
 
 To verify the set up was successful you can run the following:
-- Run the tests for tasks and flows in the collection
+- Run the tests for tasks and flows in the collection:
    ```bash
    pytest tests
    ```
-- Serve the docs with `mkdocs`
+- Serve the docs with `mkdocs`:
    ```bash
    mkdocs serve
    ```
@@ -51,10 +51,10 @@ In order to publish to PyPI, you'll need a PyPI account and generate an API toke
 
 Once you've obtained a PyPI API token, [create a GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `PYPI_API_TOKEN`.
 
-There is also a GitHub Action that performs a test publish to [test PyPI](https://test.pypi.org/) to allow for a test deployment without affecting PyPI. You will need a separate token for test PyPI which can be saved in a GitHub secret names `TEST_PYPI_API_TOKEN`
+There is also a GitHub Action that performs a test publish to [test PyPI](https://test.pypi.org/) to allow for a test deployment without affecting PyPI. You will need a separate token for test PyPI which can be saved in a GitHub secret names `TEST_PYPI_API_TOKEN`.
 
 ## Further guidance
 
 If you run into any issues during the bootstrapping process, feel free to open an issue in the [prefect-collection-template](https://github.com/PrefectHQ/prefect-collection-template) repository.
 
-If you have any questions or issues while developing your collection, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack)
+If you have any questions or issues while developing your collection, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack).
