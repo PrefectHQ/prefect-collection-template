@@ -133,3 +133,6 @@ dmypy.json
 
 # VS Code
 .vscode
+
+# Genereated project
+prefect-collection
