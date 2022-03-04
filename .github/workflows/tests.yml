@@ -32,5 +32,4 @@ jobs:
       - name: Run tests
         run: |
           export PREFECT_ORION_DATABASE_CONNECTION_URL="sqlite+aiosqlite:///$(pwd)/orion-tests.db"
-          coverage run --branch pytest tests -vv
-          coverage report
+          pytest tests -vv
