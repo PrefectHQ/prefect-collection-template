@@ -8,7 +8,7 @@ Requires an installation of Python 3.7+
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
 
-### Git setup
+### GitHub setup
 
 Generate a Prefect collection project in the terminal:
 
