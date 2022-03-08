@@ -8,6 +8,30 @@ Requires an installation of Python 3.7+
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
 
+### Git setup
+
+Generate a Prefect collection project in the terminal:
+
+```bash
+cookiecutter https://github.com/PrefectHQ/prefect-collection-template
+```
+
+Then, create a new repo following the prompts at:
+https://github.com/organizations/{{ cookiecutter.github_organization }}/repositories/new
+
+Upon creation, push the repository to GitHub:
+```bash
+git remote add origin https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}.git
+git branch -M main
+git push -u origin main
+```
+
+Lastly, it's recommended to setup some protection rules for main at:
+https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/settings/branches
+
+- Require a pull request before merging
+- Require approvals
+
 ### Project setup
 
 To setup your project run the following:
@@ -43,7 +67,11 @@ This collection has been setup to with [mkdocs](https://www.mkdocs.org/) for aut
 
 ### CI Pipeline
 
-This collection comes with [GitHub Actions](https://docs.github.com/en/actions) for testing and linting. To add additional actions, you can add jobs in the `.github/workflows` folder. On PR, the pipeline will run linting via [`black`](https://black.readthedocs.io/en/stable/) and [`flake8`](https://flake8.pycqa.org/en/latest/) and unit tests via `pytest`.
+This collection comes with [GitHub Actions](https://docs.github.com/en/actions) for testing and linting. To add additional actions, you can add jobs in the `.github/workflows` folder. On pull request, the pipeline will run linting via [`black`](https://black.readthedocs.io/en/stable/), [`flake8`](https://flake8.pycqa.org/en/latest/), [`interrogate`](https://interrogate.readthedocs.io/en/latest/), and unit tests via `pytest` alongside `coverage`.
+
+`interrogate` will tell you which methods, functions, classes, and modules have docstrings, and which do not--the job has a fail threshold of 95%, meaning that it will fail if more than 5% of the codebase is undocumented.
+
+Simiarly, `coverage` ensures that the codebase includes tests--the job has a fail threshold of 80%, meaning that it will fail if more than 20% of the codebase is missing tests.
 
 ### Package and Publish
 
@@ -54,6 +82,8 @@ In order to publish to PyPI, you'll need a PyPI account and generate an API toke
 Once you've obtained a PyPI API token, [create a GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `PYPI_API_TOKEN`.
 
 To create publish a new version of your collection, [create a new GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) and tag it with the version that you want to deploy (e.g. v0.3.2). This will trigger workflow to publish the new version on PyPI and deploy the updated docs to GitHub pages.
+
+Upon publishing, a `docs` branch is automatically created. To hook this up to GitHub Pages, simply head over to https://github.com/PrefectHQ/{{ cookiecutter.collection_name }}/settings/pages, select `docs` under the dropdown menu, keep the default `/root` folder, `Save`, and upon refresh, you should see a prompt stating "Your site is published at https://<random_name>.pages.github.io/".
 
 ## Further guidance
 
