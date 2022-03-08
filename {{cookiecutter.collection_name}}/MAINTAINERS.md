@@ -26,11 +26,13 @@ git branch -M main
 git push -u origin main
 ```
 
-Lastly, it's recommended to setup some protection rules for main at:
+It's recommended to setup some protection rules for main at:
 https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/settings/branches
 
 - Require a pull request before merging
 - Require approvals
+
+Lastly, [code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) for the repository can be set, like this [example here](https://github.com/PrefectHQ/prefect/blob/master/.github/CODEOWNERS).
 
 ### Project setup
 
