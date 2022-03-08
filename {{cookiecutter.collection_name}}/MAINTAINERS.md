@@ -11,23 +11,25 @@ We recommend using a Python virtual environment manager such as pipenv, conda or
 ### Project setup
 
 To setup your project run the following:
-   ```bash
-   # Create an editable install of your project
-   pip install -e ".[dev]"
 
-   # Configure pre-commit hooks
-   pre-commit install
-   ```
+```bash
+# Create an editable install of your project
+pip install -e ".[dev]"
+
+# Configure pre-commit hooks
+pre-commit install
+```
 
 To verify the set up was successful you can run the following:
+
 - Run the tests for tasks and flows in the collection:
-   ```bash
-   pytest tests
-   ```
+  ```bash
+  pytest tests
+  ```
 - Serve the docs with `mkdocs`:
-   ```bash
-   mkdocs serve
-   ```
+  ```bash
+  mkdocs serve
+  ```
 
 ## Developing tasks and flows
 
@@ -45,13 +47,13 @@ This collection comes with [GitHub Actions](https://docs.github.com/en/actions) 
 
 ### Package and Publish
 
-GitHub actions will also handle packaging and publishing of your collection to [PyPI](https://pypi.org/) so other Prefect users can your collection in their flows. 
+GitHub actions will handle packaging and publishing of your collection to [PyPI](https://pypi.org/) so other Prefect users can your collection in their flows.
 
 In order to publish to PyPI, you'll need a PyPI account and generate an API token to authenticate with PyPI when publishing new versions of your collection. The [PyPI documentation](https://pypi.org/help/#apitoken) outlines the steps needed to get an API token.
 
 Once you've obtained a PyPI API token, [create a GitHub secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `PYPI_API_TOKEN`.
 
-There is also a GitHub Action that performs a test publish to [test PyPI](https://test.pypi.org/) to allow for a test deployment without affecting PyPI. You will need a separate token for test PyPI which can be saved in a GitHub secret names `TEST_PYPI_API_TOKEN`.
+To create publish a new version of your collection, [create a new GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) and tag it with the version that you want to deploy (e.g. v0.3.2). This will trigger workflow to publish the new version on PyPI and deploy the updated docs to GitHub pages.
 
 ## Further guidance
 
