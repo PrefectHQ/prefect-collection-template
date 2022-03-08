@@ -69,7 +69,7 @@ This collection has been setup to with [mkdocs](https://www.mkdocs.org/) for aut
 
 This collection comes with [GitHub Actions](https://docs.github.com/en/actions) for testing and linting. To add additional actions, you can add jobs in the `.github/workflows` folder. On pull request, the pipeline will run linting via [`black`](https://black.readthedocs.io/en/stable/), [`flake8`](https://flake8.pycqa.org/en/latest/), [`interrogate`](https://interrogate.readthedocs.io/en/latest/), and unit tests via `pytest` alongside `coverage`.
 
-`interrogate` will tell you which methods, functions, classes, and modules have docstrings, and which do not--the job has a fail threshold of 95%, meaning that it will fail if more than 5% of the codebase is undocumented.
+`interrogate` will tell you which methods, functions, classes, and modules have docstrings, and which do not--the job has a fail threshold of 95%, meaning that it will fail if more than 5% of the codebase is undocumented. We recommend following the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) for docstring format.
 
 Simiarly, `coverage` ensures that the codebase includes tests--the job has a fail threshold of 80%, meaning that it will fail if more than 20% of the codebase is missing tests.
 
