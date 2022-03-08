@@ -15,6 +15,6 @@ We're currently looking for contributions for the following:
 
 And anything else you can think of!
 
-Uncertain about something? Let us help guide you by [submitting an issue](https://github.com/{{ cookiecutter.github_repo }}/{{ cookiecutter.collection_name }}/issues).
+Uncertain about something? Let us help guide you by [submitting an issue](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/issues).
 
 For more information, please refer to our [MAINTAINERS](MAINTAINERS.md) guide.
