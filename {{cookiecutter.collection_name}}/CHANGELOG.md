@@ -25,4 +25,4 @@ Released on ????? ?th, 20??.
 
 ### Added
 
-- `task_name` task - [#15](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pull/1)
+- `task_name` task - [#1](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pull/1)
