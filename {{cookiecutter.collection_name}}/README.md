@@ -2,7 +2,7 @@
 
 ## Welcome!
 
-{{ cookiecutter.collection_name }} is a collection of prebuilt Prefect tasks that can be used to quickly construct Prefect flows.
+`{{ cookiecutter.collection_name }}` is a collection of prebuilt Prefect tasks that can be used to quickly construct Prefect flows.
 
 ## Getting Started
 

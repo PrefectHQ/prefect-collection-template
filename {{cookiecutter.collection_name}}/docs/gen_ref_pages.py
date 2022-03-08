@@ -1,3 +1,5 @@
+"Copies README.md to index.md."
+
 from pathlib import Path
 
 import mkdocs_gen_files
