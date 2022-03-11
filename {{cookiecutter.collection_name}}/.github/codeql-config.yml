@@ -1,0 +1,4 @@
+paths-ignore:
+  - tests/**/test_*.py
+  - versioneer.py
+  - {{ cookiecutter.collection_slug }}/_version.py
