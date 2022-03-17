@@ -4,6 +4,6 @@
     "github_organization": "PrefectHQ",
     "collection_name": "prefect-collection",
     "collection_slug": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "collection_short_description": "Prefect tasks and subflows for interacting with ",
+    "collection_short_description": "Prefect integrations for interacting with ",
     "_copy_without_render": [".github/workflows/*.yml"]
 }
