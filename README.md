@@ -10,8 +10,8 @@ When you bootstrap a Prefect Collection with `prefect-collection-template` you'l
 - [`black`](https://github.com/psf/black), [`isort`](https://github.com/PyCQA/isort), and [`flake8`](https://flake8.pycqa.org/en/latest/) for automatic code formatting and linting
 - [`pytest`](https://docs.pytest.org/en/7.1.x/) for unit testing
 - [`interrogate`](https://interrogate.readthedocs.io/en/latest/) for documentation coverage analysis
-- [`coverage.py`](https://coverage.readthedocs.io/en/6.3.2/) for code coverage analysis
-- [`pre-commit`](https://pre-commit.com/) to automatically run code formatting and linting
+- [`Coverage.py`](https://coverage.readthedocs.io/en/6.3.2/) for code coverage analysis
+- [`pre-commit`](https://pre-commit.com/) to automatically run code formatting and linting prior to git commit
 - [`versioneer`](https://github.com/python-versioneer/python-versioneer) for automatic package versioning
 - [GitHub Actions](https://docs.github.com/en/actions) workflows for continuous integration and deployment of your collection and its documentation
 
