@@ -46,7 +46,7 @@ def test_bake_with_defaults(cookies):
         found_toplevel_files = [f.name for f in result.project_path.iterdir()]
         assert "setup.py" in found_toplevel_files
         assert "requirements.txt" in found_toplevel_files
-        assert "requirements_dev.txt" in found_toplevel_files
+        assert "requirements-dev.txt" in found_toplevel_files
         assert "prefect_collection" in found_toplevel_files
         assert "README.md" in found_toplevel_files
         assert "tests" in found_toplevel_files
