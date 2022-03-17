@@ -38,7 +38,7 @@ Refer to the MAINTAINERS.md in the generated project for how to get started deve
 To start contributing to `prefect-collection-template`, run:
 
 ```bash
-pip install -r requirements_dev.txt
+pip install -r requirements-dev.txt
 ```
 
 To test generation of a Prefect Collection with your changes, run:
