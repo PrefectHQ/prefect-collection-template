@@ -4,6 +4,8 @@
 
 {{ cookiecutter.collection_short_description }}
 
+Docs can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/).
+
 ## Getting Started
 
 ### Python setup
