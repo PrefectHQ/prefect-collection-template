@@ -34,8 +34,8 @@ jobs:
         # Initializes test git project to ensure pre-commit runs correctly
         run: |
           cd prefect-collection
+          git init
           git config user.email "test@example.com"
           git config user.name "Test"
-          git init
           git commit -am "Test commit"
           pre-commit run --show-diff-on-failure --color=always --all-files
