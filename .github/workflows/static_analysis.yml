@@ -31,6 +31,12 @@ jobs:
 
       - name: Run pre-commit on generated collection
         # Runs pre-commit on the generated collection to ensure the code styling is compliant
+        # Initializes test git project to ensure pre-commit runs correctly
         run: |
           cd prefect-collection
+          git init
+          git config user.email "test@example.com"
+          git config user.name "Test"
+          git add .
+          git commit -m "Test commit"
           pre-commit run --show-diff-on-failure --color=always --all-files
