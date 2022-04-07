@@ -1,4 +1,5 @@
 site_name: {{ cookiecutter.collection_name }}
+repo_url: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}
 theme:
   name: material
   palette:
