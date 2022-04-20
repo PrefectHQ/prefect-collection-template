@@ -28,5 +28,5 @@ def test_strip_kwargs():
     assert strip_kwargs(**{"a": None, "b": None}) == {}
     assert strip_kwargs(**{"a": "", "b": None}) == {"a": ""}
     assert strip_kwargs(**{"a": "abc", "b": "def"}) == {"a": "abc", "b": "def"}
-    assert strip_kwargs(**{"a": "abc", "b": "def"}) == {"a": "abc", "b": "def"}
+    assert strip_kwargs(a="abc", b="def") == {"a": "abc", "b": "def"}
     assert strip_kwargs(**dict(a=[])) == {"a": []}
