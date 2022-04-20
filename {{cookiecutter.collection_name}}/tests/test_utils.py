@@ -1,6 +1,9 @@
 import pytest
 from {{cookiecutter.collection_name}}.utils import (
-    camel_to_snake_case, initialize_return_fields_defaults, strip_kwargs)
+    camel_to_snake_case,
+    initialize_return_fields_defaults,
+    strip_kwargs,
+)
 
 
 @pytest.mark.parametrize("string", ["someIDString", "SomeIDString", "some_id_string"])
