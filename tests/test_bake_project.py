@@ -1,9 +1,10 @@
+import os
+import shlex
+import subprocess
+from contextlib import contextmanager
+
 from cookiecutter.exceptions import FailedHookException
 from cookiecutter.utils import rmtree
-from contextlib import contextmanager
-import os
-import subprocess
-import shlex
 
 
 @contextmanager

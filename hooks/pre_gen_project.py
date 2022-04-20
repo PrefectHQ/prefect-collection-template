@@ -1,7 +1,6 @@
 import re
 import sys
 
-
 MODULE_REGEX = r"^[_a-zA-Z][_a-zA-Z0-9]+$"
 PREFECT_COLLECTION_MODULE_REGEX = r"^prefect_[_a-zA-Z][_a-zA-Z0-9]+$"
 PREFECT_COLLECTION_NAME_REGEX = r"^prefect-[-a-zA-Z][-a-zA-Z0-9]+$"

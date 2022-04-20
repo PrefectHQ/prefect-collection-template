@@ -1,13 +1,13 @@
 """Utilities to assist with using generated collections."""
 
-from collections import defaultdict
-import re
 import json
+import re
+from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Union
 
-SNAKE_CASE_REGEX1 = re.compile('(.)([A-Z][a-z]+)')
-SNAKE_CASE_REGEX2 = re.compile('([a-z0-9])([A-Z])')
+SNAKE_CASE_REGEX1 = re.compile("(.)([A-Z][a-z]+)")
+SNAKE_CASE_REGEX2 = re.compile("([a-z0-9])([A-Z])")
 
 
 def camel_to_snake_case(string: str) -> str:
