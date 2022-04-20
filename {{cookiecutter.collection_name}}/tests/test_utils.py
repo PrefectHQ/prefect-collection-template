@@ -1,5 +1,6 @@
 import pytest
-from {{cookiecutter.collection_name}}.utils import (
+
+from {{cookiecutter.collection_slug}}.utils import (
     camel_to_snake_case,
     initialize_return_fields_defaults,
     strip_kwargs,
