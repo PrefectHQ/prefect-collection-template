@@ -81,6 +81,8 @@ To add a new page for a module in your collection, create a new markdown file in
 
 You can also refer to the `flows.md` and `tasks.md` files included in your generated project as examples.
 
+Once you have working code, replace the boilerplate example on README.md.
+
 ## Development lifecycle
 
 ### CI Pipeline
