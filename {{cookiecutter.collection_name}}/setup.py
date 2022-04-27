@@ -26,6 +26,7 @@ setup(
     packages=find_packages(exclude=("tests", "docs")),
     python_requires=">=3.7",
     install_requires=install_requires,
+    include_package_data=True,
     extras_require={"dev": dev_requires},
     classifiers=[
         "Natural Language :: English",
