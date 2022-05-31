@@ -3,7 +3,6 @@ site_url: https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutt
 repo_url: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}
 edit_uri: /edit/main/docs/
 theme:
-theme:
   name: material
   favicon: img/favicon.ico
   palette:
