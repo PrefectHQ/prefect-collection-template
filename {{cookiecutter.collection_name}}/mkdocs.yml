@@ -1,10 +1,23 @@
 site_name: {{ cookiecutter.collection_name }}
+site_url: https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}
 repo_url: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}
+edit_uri: /edit/main/docs/
+theme:
 theme:
   name: material
+  favicon: img/favicon.ico
   palette:
     primary: blue
     accent: blue
+  icon:
+    repo: fontawesome/brands/github
+  logo:
+    img/prefect-logo-white.png
+  font:
+    text: Inter
+    code: Source Code Pro
+extra_css:
+    - stylesheets/extra.css
 markdown_extensions:
     - admonition
     - attr_list
