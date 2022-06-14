@@ -4,6 +4,10 @@
 
 {{ cookiecutter.collection_short_description }}
 
+The tasks within this collection were created by a code generator using the service's OpenAPI spec.
+
+The service's REST API documentation can be found [here](replace_this_with_link_to_api_docs).
+
 ## Getting Started
 
 ### Python setup
