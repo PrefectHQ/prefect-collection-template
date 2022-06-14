@@ -4,6 +4,9 @@ from prefect_collection_generator.rest import populate_collection_repo
 
 # UPDATE THIS SECTION
 extra_context = {
+    "full_name":  "Arthur Dent",  # e.g. "Prefect Technologies, Inc.",
+    "email": "arthur.dent@example.com",  # e.g. "help@prefect.io",
+    "github_organization": "arthur_dent",  # e.g. "PrefectHQ",
     "collection_name": "{{ cookiecutter.collection_name }}",
     "collection_short_description": "Prefect integrations interacting with {{ cookiecutter.collection_name }}",
 }
