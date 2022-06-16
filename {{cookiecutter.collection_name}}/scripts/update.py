@@ -7,15 +7,10 @@ from prefect_collection_generator.gql import GraphQLGenerator
 service_name = ""
 base_directory = "../{{ cookiecutter.collection_name }}"
 overwrite = False
-root_to_op_types = {
-    "query": [],
-    "mutations": []
-}
+root_to_op_types = {"query": [], "mutations": []}
 
 graphql_generator = GraphQLGenerator(
-    service_name,
-    base_directory=base_directory,
-    overwrite=overwrite
+    service_name, base_directory=base_directory, overwrite=overwrite
 )
 for root_type, op_types in root_to_op_types.items():
     graphql_generator.generate_config_files(root_type, op_types=op_types)

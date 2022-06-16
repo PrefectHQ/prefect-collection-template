@@ -1,9 +1,10 @@
 """
 Used for generating the repository from scratch.
 """
+from pathlib import Path
+
 # from cookiecutter.main import cookiecutter
 from prefect_collection_generator.gql import populate_collection_repo
-
 
 # USE THIS IF NEED TO REGENERATE FROM SCRATCH; IF NOT SKIP TO NEXT SECTION
 # extra_context = {
@@ -11,7 +12,7 @@ from prefect_collection_generator.gql import populate_collection_repo
 #     "email": "{{ cookiecutter.email }}",  # e.g. "help@prefect.io",
 #     "github_organization": "{{ cookiecutter.github_organization }}",  # e.g. "PrefectHQ",
 #     "collection_name": "{{ cookiecutter.collection_name }}",
-#     "collection_short_description": "Prefect integrations interacting with {{ cookiecutter.collection_name }}",
+#     "collection_short_description": "Prefect integrations interacting with {{ cookiecutter.collection_name }}",  # noqa
 # }
 
 # collection_template_url = "https://github.com/PrefectHQ/prefect-collection-template"
@@ -26,7 +27,9 @@ from prefect_collection_generator.gql import populate_collection_repo
 # UPDATE THESE AS DESIRED
 service_name = ""  # e.g. GitHub
 service_url = ""  # e.g. https://api.github.com/graphql
-token = ""  # e.g. ghp_...
+token_path = Path(f"~/.secrets/{service_name.lower()}").expanduser()
+with open(token_path) as f:
+    token = f.read().strip()  # e.g. ghp_...
 root_to_op_types = {
     "query": None,  # e.g. ["repository", "pull_requests"]
     "mutation": None,  # e.g. ["add_star", "remove_star"]
