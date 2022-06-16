@@ -47,7 +47,7 @@ async def test_execute_endpoint(http_method):
     async def test_flow():
         credentials = MockCredentials()
         result = await execute_endpoint(
-            url, credentials, http_method=http_method, **params
+            url, credentials, http_method=http_method, params=params
         )
         return result
 
