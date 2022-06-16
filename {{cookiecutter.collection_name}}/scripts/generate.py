@@ -31,14 +31,18 @@ token_path = Path(f"~/.secrets/{service_name.lower()}").expanduser()
 with open(token_path) as f:
     token = f.read().strip()  # e.g. ghp_...
 root_to_op_types = {
+    # if None, generates all available op_types
     "query": None,  # e.g. ["repository", "pull_requests"]
     "mutation": None,  # e.g. ["add_star", "remove_star"]
 }
 overwrite = True
+repo_directory = "../"
 
 populate_collection_repo(
     service_name,
     service_url,
     token,
     root_to_op_types,
+    repo_directory=repo_directory,
+    overwrite=overwrite
 )
