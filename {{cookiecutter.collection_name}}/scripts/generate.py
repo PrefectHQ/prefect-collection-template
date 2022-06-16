@@ -1,3 +1,6 @@
+"""
+Used for generating the repository from scratch.
+"""
 # from cookiecutter.main import cookiecutter
 from prefect_collection_generator.rest import populate_collection_repo
 
@@ -29,9 +32,5 @@ routes = None
 overwrite = True
 
 populate_collection_repo(
-    service_name,
-    urls,
-    routes=routes,
-    overwrite=overwrite,
-    repo_directory=".."
+    service_name, urls, routes=routes, overwrite=overwrite, repo_directory=".."
 )

@@ -1,9 +1,12 @@
+"""
+Used for appending extra routes after initial generation.
+"""
 from prefect_collection_generator.rest import RESTGenerator
 
 # UPDATE THIS SECTION
 service_name = "{{ cookiecutter.collection_name }}"
 base_directory = "../{{ cookiecutter.collection_name }}"
-overwrite = True
+overwrite = False
 url = ""
 routes = []
 
