@@ -1,1 +1,2 @@
 prefect>=2.0a13
+sgqlc>=15.0

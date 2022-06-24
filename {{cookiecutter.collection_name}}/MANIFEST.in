@@ -1,2 +1,3 @@
 include versioneer.py
 include {{cookiecutter.collection_slug}}/_version.py
+include {{cookiecutter.collection_slug}}/configs/*/*.json

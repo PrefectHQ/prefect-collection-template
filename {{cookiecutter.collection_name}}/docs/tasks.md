@@ -1,1 +1,0 @@
-::: {{ cookiecutter.collection_slug }}.tasks

@@ -4,6 +4,8 @@
 
 {{ cookiecutter.collection_short_description }}
 
+The tasks within this collection were created by a code generator using the service's GraphQL schema.
+
 ## Getting Started
 
 ### Python setup
