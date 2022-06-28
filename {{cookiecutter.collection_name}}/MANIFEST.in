@@ -1,2 +1,6 @@
 include versioneer.py
 include {{cookiecutter.collection_slug}}/_version.py
+include {{cookiecutter.collection_slug}}/schemas/original/*.json
+include {{cookiecutter.collection_slug}}/schemas/*.json
+include {{cookiecutter.collection_slug}}/schemas/original/*.yaml
+include {{cookiecutter.collection_slug}}/schemas/*.yaml
