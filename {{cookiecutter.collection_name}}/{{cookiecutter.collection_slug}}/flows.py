@@ -14,3 +14,4 @@ def hello_and_goodbye():
     """
     print(hello_{{ cookiecutter.collection_slug }})
     print(goodbye_{{ cookiecutter.collection_slug }})
+    return "Done"
