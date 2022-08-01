@@ -19,7 +19,7 @@ from prefect_collection_generator.gql import populate_collection_repo
 # cookiecutter(
 #     collection_template_url,
 #     no_input=True,
-#     checkout="generated_rest",
+#     checkout="generated_graphql",
 #     extra_context=extra_context,
 #     overwrite_if_exists=True
 # )
