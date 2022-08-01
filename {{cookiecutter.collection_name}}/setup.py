@@ -28,6 +28,11 @@ setup(
     install_requires=install_requires,
     include_package_data=True,
     extras_require={"dev": dev_requires},
+    entry_points={
+        "prefect.collections": [
+            "{{ collection_name }}Credentials = prefect_{{ collection_slug }}.credentials",
+        ]
+    },
     classifiers=[
         "Natural Language :: English",
         "Intended Audience :: Developers",
