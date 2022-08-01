@@ -27,6 +27,11 @@ setup(
     python_requires=">=3.7",
     install_requires=install_requires,
     extras_require={"dev": dev_requires},
+    entry_points={
+        "prefect.collections": [
+            "{{ collection_name }}Credentials = prefect_{{ collection_slug }}.credentials",
+        ]
+    },
     classifiers=[
         "Natural Language :: English",
         "Intended Audience :: Developers",
