@@ -30,7 +30,7 @@ setup(
     extras_require={"dev": dev_requires},
     # entry_points={
     #     "prefect.collections": [
-    #         "{{ collection_name }}Credentials = {{ collection_slug }}.credentials",
+    #         "{{ cookiecutter.collection_name }}Credentials = {{ cookiecutter.collection_slug }}.credentials",
     #     ]
     # },
     # UPDATE ENTRY POINT ABOVE WITH VALID CLASS
