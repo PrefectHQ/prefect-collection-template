@@ -1,9 +1,14 @@
 """
 Used for generating the repository from scratch.
 """
+from pathlib import Path
+
 # from cookiecutter.main import cookiecutter
 from prefect_collection_generator.rest import populate_collection_repo
 
+
+THIS_DIRECTORY = Path(__file__).parent.absolute()
+REPO_DIRECTORY = THIS_DIRECTORY.parent()
 
 # USE THIS IF NEED TO REGENERATE FROM SCRATCH; IF NOT SKIP TO NEXT SECTION
 # extra_context = {
@@ -22,6 +27,7 @@ from prefect_collection_generator.rest import populate_collection_repo
 #     extra_context=extra_context,
 #     overwrite_if_exists=True
 # )
+# REPO_DIRECTORY = THIS_DIRECTORY / "{{ cookiecutter.collection_slug }}"  # redirects repo_directory
 
 # UPDATE THESE AS DESIRED
 service_name = "{{ cookiecutter.collection_name }}"
