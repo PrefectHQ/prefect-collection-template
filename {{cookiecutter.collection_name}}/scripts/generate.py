@@ -31,12 +31,14 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 
 # UPDATE THESE AS DESIRED
 service_name = "{{ cookiecutter.collection_name }}"
-urls = [
-
-]
+urls = []
 routes = None
 overwrite = True
 
 populate_collection_repo(
-    service_name, urls, routes=routes, overwrite=overwrite, repo_directory=REPO_DIRECTORY
+    service_name,
+    urls,
+    routes=routes,
+    overwrite=overwrite,
+    repo_directory=REPO_DIRECTORY,
 )
