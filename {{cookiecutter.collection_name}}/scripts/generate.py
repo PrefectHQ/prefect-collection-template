@@ -49,5 +49,5 @@ populate_collection_repo(
     token,
     root_to_op_types,
     repo_directory=REPO_DIRECTORY,
-    overwrite=overwrite
+    overwrite=overwrite,
 )
