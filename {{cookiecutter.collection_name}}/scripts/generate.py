@@ -35,13 +35,13 @@ urls = []
 routes = None
 overwrite = True
 
-
 def preprocess_fn(schema: Dict[str, Any]) -> Dict[str, Any]:
     """
     Preprocess the schema so it adheres to datamodel_code_generator
     standards; if not, pydantic models will not be auto-generated.
     """
     return schema
+
 
 populate_collection_repo(
     service_name,
