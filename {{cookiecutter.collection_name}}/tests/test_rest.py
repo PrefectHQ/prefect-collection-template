@@ -46,29 +46,10 @@ async def test_execute_endpoint(http_method):
     @flow
     async def test_flow():
         credentials = MockCredentials()
-        result = await execute_endpoint(
+        response = await execute_endpoint(
             url, credentials, http_method=http_method, params=params
         )
+        result = response.json()
         return result
 
     assert (await test_flow()) == {"url": url, "params": params}
-
-
-@pytest.mark.parametrize("responses", [{}, {404: "Testing message"}, None])
-async def test_execute_endpoint_error(responses):
-    url = "BAD URL"
-
-    @flow
-    async def test_flow():
-        credentials = MockCredentials()
-        result = await execute_endpoint(
-            url, credentials, http_method="get", responses=responses
-        )
-        return result
-
-    if not responses:
-        with pytest.raises(httpx.HTTPStatusError, match="Not found"):
-            (await test_flow())
-    else:
-        with pytest.raises(httpx.HTTPStatusError, match="Testing message"):
-            (await test_flow())
