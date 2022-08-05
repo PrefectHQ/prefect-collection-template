@@ -51,7 +51,7 @@ async def test_execute_endpoint(http_method):
         )
         return result
 
-    assert (await test_flow()).result().result() == {"url": url, "params": params}
+    assert (await test_flow()) == {"url": url, "params": params}
 
 
 @pytest.mark.parametrize("responses", [{}, {404: "Testing message"}, None])
@@ -68,7 +68,7 @@ async def test_execute_endpoint_error(responses):
 
     if not responses:
         with pytest.raises(httpx.HTTPStatusError, match="Not found"):
-            (await test_flow()).result().result()
+            (await test_flow())
     else:
         with pytest.raises(httpx.HTTPStatusError, match="Testing message"):
-            (await test_flow()).result().result()
+            (await test_flow())
