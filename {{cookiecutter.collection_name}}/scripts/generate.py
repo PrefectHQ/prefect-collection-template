@@ -35,10 +35,16 @@ urls = []
 routes = None
 overwrite = True
 
+# preprocess the schema so it adheres to
+# datamodel_code_generator standards
+def preprocess_fn(schema: Dict[str, Any]) -> Dict[str, Any]:
+    return schema
+
 populate_collection_repo(
     service_name,
     urls,
     routes=routes,
     overwrite=overwrite,
+    preprocess_fn=preprocess_fn,
     repo_directory=REPO_DIRECTORY,
 )
