@@ -1,8 +1,8 @@
 """
 Used for generating the repository from scratch.
 """
-from typing import Any, Dict
 from pathlib import Path
+from typing import Any, Dict
 
 from prefect_collection_generator.rest import populate_collection_repo
 

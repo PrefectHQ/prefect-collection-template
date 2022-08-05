@@ -4,7 +4,7 @@ import httpx
 import pytest
 from prefect import flow
 
-from {{cookiecutter.collection_slug}}.rest import HTTPMethod, execute_endpoint
+from {{cookiecutter.collection_slug}}.rest import HTTPMethod, execute_endpoint, strip_kwargs
 
 
 class MockAsyncClient:
