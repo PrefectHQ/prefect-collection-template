@@ -30,7 +30,7 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 # REPO_DIRECTORY = THIS_DIRECTORY / {{ cookiecutter.collection_name }}  # redirects repo_directory
 
 # UPDATE THESE AS DESIRED
-service_name = ""  # e.g. GitHub
+service_name = ""{{ cookiecutter.collection_name.split('-')[1:] | join(' ') | title }}""  # e.g. GitHub
 service_url = ""  # e.g. https://api.github.com/graphql
 token_path = Path(f"~/.secrets/{service_name.lower()}").expanduser()
 with open(token_path) as f:
