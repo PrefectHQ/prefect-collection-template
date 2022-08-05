@@ -12,11 +12,11 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 # from cookiecutter.main import cookiecutter
 
 # extra_context = {
-#     "full_name":  "Prefect Technologies, Inc.",
-#     "email": "help@prefect.io",
-#     "github_organization": "PrefectHQ",
-#     "collection_name": "prefect-github",
-#     "collection_short_description": "Prefect integrations interacting with GitHub",  # noqa
+#     "full_name":  "{{ cookiecutter.full_name }}",  # e.g. "Prefect Technologies, Inc.",
+#     "email": "{{ cookiecutter.email }}",  # e.g. "help@prefect.io",
+#     "github_organization": "{{ cookiecutter.github_organization }}",  # e.g. "PrefectHQ",
+#     "collection_name": "{{ cookiecutter.collection_name }}",
+#     "collection_short_description": "Prefect integrations interacting with {{ cookiecutter.collection_name }}",  # noqa
 # }
 
 # collection_template_url = "https://github.com/PrefectHQ/prefect-collection-template"
@@ -27,7 +27,7 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 #     extra_context=extra_context,
 #     overwrite_if_exists=True
 # )
-# REPO_DIRECTORY = THIS_DIRECTORY / "prefect_github"  # redirects repo_directory
+# REPO_DIRECTORY = THIS_DIRECTORY / {{ cookiecutter.collection_name }}  # redirects repo_directory
 
 # UPDATE THESE AS DESIRED
 service_name = ""  # e.g. GitHub
