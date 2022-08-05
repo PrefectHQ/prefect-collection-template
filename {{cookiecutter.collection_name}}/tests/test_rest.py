@@ -38,10 +38,10 @@ class MockCredentials(MagicMock):
         return MockAsyncClient()
 
 
+@pytest.mark.parametrize("params", [dict(a="A", b="B"), None])
 @pytest.mark.parametrize("http_method", ["get", HTTPMethod.GET])
-async def test_execute_endpoint(http_method):
+async def test_execute_endpoint(params, http_method):
     url = "https://prefect.io/"
-    params = dict(a="A", b="B")
 
     @flow
     async def test_flow():
@@ -53,3 +53,11 @@ async def test_execute_endpoint(http_method):
         return result
 
     assert (await test_flow()) == {"url": url, "params": params}
+
+
+def test_strip_kwargs():
+    assert strip_kwargs(**{"a": None, "b": None}) == {}
+    assert strip_kwargs(**{"a": "", "b": None}) == {"a": ""}
+    assert strip_kwargs(**{"a": "abc", "b": "def"}) == {"a": "abc", "b": "def"}
+    assert strip_kwargs(a="abc", b="def") == {"a": "abc", "b": "def"}
+    assert strip_kwargs(**dict(a=[])) == {"a": []}
