@@ -28,12 +28,11 @@ setup(
     install_requires=install_requires,
     include_package_data=True,
     extras_require={"dev": dev_requires},
-    # entry_points={
-    #     "prefect.collections": [
-    #         "{{ cookiecutter.collection_name }}Credentials = {{ cookiecutter.collection_slug }}.credentials",
-    #     ]
-    # },
-    # UPDATE ENTRY POINT ABOVE WITH VALID CLASS
+    entry_points={
+        "prefect.collections": [
+            "{{ cookiecutter.collection_name.split('-')[1:] | join | title }}Credentials = {{ cookiecutter.collection_slug }}.credentials",
+        ]
+    },
     classifiers=[
         "Natural Language :: English",
         "Intended Audience :: Developers",
