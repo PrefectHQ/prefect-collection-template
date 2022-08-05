@@ -30,7 +30,7 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 # REPO_DIRECTORY = THIS_DIRECTORY / "{{ cookiecutter.collection_name }}"  # redirects repo_directory
 
 # UPDATE THESE AS DESIRED
-service_name = "{{ cookiecutter.collection_name }}"
+service_name = "{{ cookiecutter.collection_name.split('-')[1:] | join(' ') | title }}"
 urls = []
 routes = None
 overwrite = True
