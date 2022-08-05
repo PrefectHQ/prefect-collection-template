@@ -17,7 +17,7 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 #     "email": "{{ cookiecutter.email }}",  # e.g. "help@prefect.io",
 #     "github_organization": "{{ cookiecutter.github_organization }}",  # e.g. "PrefectHQ",
 #     "collection_name": "{{ cookiecutter.collection_name }}",
-#     "collection_short_description": "Prefect integrations interacting with {{ cookiecutter.collection_name }}",  # noqa
+#     "collection_short_description": "Prefect integrations for {{ cookiecutter.collection_name.split('-')[1:] | join(' ') | title }}",  # noqa
 # }
 
 # collection_template_url = "https://github.com/PrefectHQ/prefect-collection-template"
