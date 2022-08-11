@@ -1,5 +1,12 @@
 # {{ cookiecutter.collection_name }}
 
+[![PyPI version](https://badge.fury.io/py/{{ cookiecutter.collection_name }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/{{ cookiecutter.collection_name }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/)
+[![Downloads](https://pepy.tech/badge/{{ cookiecutter.collection_name }})](https://pepy.tech/project/{{ cookiecutter.collection_name }})
+[![Stars](https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }})](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/)
+[![PyPI license](https://img.shields.io/pypi/l/{{ cookiecutter.collection_name }}.svg)](https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/)
+[![Contributors](https://img.shields.io/github/contributors/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }})](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/graphs/contributors)
+
 ## Welcome!
 
 {{ cookiecutter.collection_short_description }}
