@@ -1,5 +1,3 @@
-# {{ cookiecutter.collection_name }}
-
 <p align="center">
     <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
         <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
@@ -10,6 +8,8 @@
     <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
 </p>
+
+# {{ cookiecutter.collection_name }}
 
 ## Welcome!
 
