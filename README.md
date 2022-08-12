@@ -25,6 +25,12 @@ Install `cookiecutter` if you have not already:
 pip install cookiecutter
 ```
 
+Then, register to [view the block](https://orion-docs.prefect.io/ui/blocks/) on Prefect Cloud:
+
+```bash
+prefect block register -m prefect_monday.credentials
+```
+
 Generate a Prefect Collection project:
 
 ```
