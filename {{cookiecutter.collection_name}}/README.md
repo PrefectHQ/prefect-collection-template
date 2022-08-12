@@ -8,6 +8,11 @@
     <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
 <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/graphs/contributors" alt="Contributors">
     <img src="https://img.shields.io/github/contributors/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
+<br>
+<a href="https://prefect-community.slack.com" alt="Slack">
+    <img src="https://img.shields.io/badge/slack-join_community-red.svg?logo=slack" /></a>
+<a href="https://discourse.prefect.io/" alt="Slack">
+    <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?logo=discourse" /></a>
 
 ## Welcome!
 
