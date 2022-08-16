@@ -1,6 +1,7 @@
-from pydantic import Field
+"""This is an example blocks module"""
 
 from prefect.blocks.core import Block
+from pydantic import Field
 
 
 class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block):

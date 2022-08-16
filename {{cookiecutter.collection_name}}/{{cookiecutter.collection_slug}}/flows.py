@@ -5,9 +5,7 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     goodbye_{{ cookiecutter.collection_slug }},
     hello_{{ cookiecutter.collection_slug }},
 )
-from {{ cookiecutter.collection_slug }}.blocks import (
-    {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block
-)
+from {{ cookiecutter.collection_slug }}.blocks import {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block
 
 
 @flow
@@ -22,3 +20,7 @@ def hello_and_goodbye():
     print(f"The block's value: {block.value}")
     print(goodbye_{{ cookiecutter.collection_slug }}())
     return "Done"
+
+
+if __name__ == "__main__":
+    hello_and_goodbye()
