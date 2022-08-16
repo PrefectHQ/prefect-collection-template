@@ -1,5 +1,7 @@
-# {{ cookiecutter.collection_name 
+# {{ cookiecutter.collection_name }}
 
+<a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI Version">
+    <img src="https://badge.fury.io/py/{{ cookiecutter.collection_name }}.svg" /></a>
 <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
     <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
 <a href="https://pepy.tech/badge/{{ cookiecutter.collection_name }}/" alt="Downloads">
