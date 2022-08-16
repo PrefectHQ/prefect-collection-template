@@ -14,7 +14,7 @@ class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block
         Load a stored value:
         ```python
         from {{ cookiecutter.collection_slug }} import {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block
-        block = {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block.load("BLOCK_NAME")
+        block = {{ cookiecutter.collection_name.split('-')[1:] | join | title }}Block.load("BLOCK_NAME")
         ```
     """
 
