@@ -1,11 +1,11 @@
 """This is an example flows module"""
 from prefect import flow
 
+from {{ cookiecutter.collection_slug }}.blocks import {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block
 from {{ cookiecutter.collection_slug }}.tasks import (
     goodbye_{{ cookiecutter.collection_slug }},
     hello_{{ cookiecutter.collection_slug }},
 )
-from {{ cookiecutter.collection_slug }}.blocks import {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block
 
 
 @flow

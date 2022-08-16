@@ -10,7 +10,7 @@ class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block
 
     Args:
         value (str): The value to store.
-    
+
     Example:
         Load a stored value:
         ```python
@@ -23,5 +23,8 @@ class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block
 
     @classmethod
     def seed_value_for_example(cls):
+        """
+        Seeds the field, value, so the block can be loaded.
+        """
         block = cls(value="A sample value")
         block.save("sample-block", overwrite=True)
