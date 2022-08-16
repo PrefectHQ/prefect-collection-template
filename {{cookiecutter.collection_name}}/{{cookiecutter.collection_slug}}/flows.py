@@ -5,6 +5,9 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     goodbye_{{ cookiecutter.collection_slug }},
     hello_{{ cookiecutter.collection_slug }},
 )
+from {{ cookiecutter.collection_slug }}.blocks import (
+    {{ cookiecutter.collection_name.split('-')[1:] | join }}Block
+)
 
 
 @flow
@@ -12,6 +15,10 @@ def hello_and_goodbye():
     """
     Sample flow that says hello and goodbye!
     """
+    {{ cookiecutter.collection_name.split('-')[1:] | join }}Block().seed_value_for_example()
+    block = {{ cookiecutter.collection_name.split('-')[1:] | join }}Block.load("sample-block")
+
     print(hello_{{ cookiecutter.collection_slug }})
+    print(f"The block's value: {block.value}")
     print(goodbye_{{ cookiecutter.collection_slug }})
     return "Done"
