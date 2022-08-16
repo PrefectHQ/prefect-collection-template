@@ -1,0 +1,16 @@
+Checklist for initial release:
+
+- [ ]  `main` branch has protection rules set
+    - [ ]  Require a pull request before merging
+    - [ ]  Require approvals
+    - [ ]  Dismiss stale pull request approvals when new commits are pushed
+    - [ ]  Require review from Code Owners
+    - [ ]  Require status checks to pass before merging
+    - [ ]  Include administrators
+- [ ]  `github-pages` and `prod` environment protection rules are set
+    - [ ]  Deployment requires manual approval
+- [ ]  Tag protection rule set to prevent contributors from creating tags that could trigger a release
+- [ ]  CODEOWNERS file has been added to `.github` folder with code owners specified
+- [ ]  [CodeQL analysis has been set up](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository#setting-up-code-scanning-using-actions) (Can be enabled after the repo is made public for free code scanning)
+- [ ]  License file is present in the repo (preferably Apache 2.0)
+- [ ]  No secrets in git history
