@@ -1,6 +1,6 @@
 # {{ cookiecutter.collection_name 
 
-<a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI version">
+<a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI Version">
     <img src="https://badge.fury.io/py/{{ cookiecutter.collection_name }}.svg" /></a>
 <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
     <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
