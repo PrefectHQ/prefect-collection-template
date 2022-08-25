@@ -4,6 +4,6 @@
     "github_organization": "arthur_dent",
     "collection_name": "prefect-collection",
     "collection_slug": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "collection_short_description": "Prefect integrations for interacting with {{ cookiecutter.collection_name }}.",
+    "collection_short_description": "Prefect integrations for interacting with {{ cookiecutter.collection_name.split('-')[1:] | join | title }}.",
     "_copy_without_render": [".github/workflows/*.yml"]
 }
