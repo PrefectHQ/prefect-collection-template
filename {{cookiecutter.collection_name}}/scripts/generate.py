@@ -32,7 +32,7 @@ REPO_DIRECTORY = THIS_DIRECTORY.parent
 
 # UPDATE THESE AS DESIRED
 service_name = "{{ cookiecutter.collection_name.split('-')[1:] | join(' ') | title }}"
-urls = []
+paths_or_urls = []  # At least one path or url must be specified!
 routes = None
 overwrite = True
 
@@ -47,7 +47,7 @@ def preprocess_fn(schema: Dict[str, Any]) -> Dict[str, Any]:
 
 populate_collection_repo(
     service_name,
-    urls,
+    paths_or_urls,
     routes=routes,
     overwrite=overwrite,
     preprocess_fn=preprocess_fn,
