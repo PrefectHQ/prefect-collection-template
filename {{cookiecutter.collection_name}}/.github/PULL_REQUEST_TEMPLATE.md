@@ -8,4 +8,3 @@
 
 ## Checklist
 - [ ] Summarized PR's changes in [CHANGELOG.md](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/blob/main/CHANGELOG.md)
-- [ ] Added my name in [CONTRIBUTORS.md](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/blob/main/CONTRIBUTORS.md)
