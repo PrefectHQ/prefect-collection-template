@@ -1,20 +1,20 @@
 # {{ cookiecutter.collection_name }}
 
-<a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI Version">
-    <img src="https://badge.fury.io/py/{{ cookiecutter.collection_name }}.svg" /></a>
-<a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
-    <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
-<a href="https://pepy.tech/badge/{{ cookiecutter.collection_name }}/" alt="Downloads">
-    <img src="https://pepy.tech/badge/{{ cookiecutter.collection_name }}" /></a>
-<a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pulse" alt="Activity">
-    <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
-<a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/graphs/contributors" alt="Contributors">
-    <img src="https://img.shields.io/github/contributors/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
-<br>
-<a href="https://prefect-community.slack.com" alt="Slack">
-    <img src="https://img.shields.io/badge/slack-join_community-red.svg?logo=slack" /></a>
-<a href="https://discourse.prefect.io/" alt="Discourse">
-    <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?logo=discourse" /></a>
+<p align="center">
+    <a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI version">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422"></a>
+    <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
+        <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
+    <a href="https://pepy.tech/badge/{{ cookiecutter.collection_name }}/" alt="Downloads">
+        <img src="https://img.shields.io/pypi/dm/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
+    <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
+    <br>
+    <a href="https://{{ cookiecutter.collection_name }}-community.slack.com" alt="Slack">
+        <img src="https://img.shields.io/badge/slack-join_community-red.svg?color=0052FF&labelColor=090422&logo=slack" /></a>
+    <a href="https://discourse.{{ cookiecutter.collection_name }}.io/" alt="Discourse">
+        <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?color=0052FF&labelColor=090422&logo=discourse" /></a>
+</p>
 
 ## Welcome!
 
