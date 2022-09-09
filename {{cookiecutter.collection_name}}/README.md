@@ -70,6 +70,8 @@ If you encounter any bugs while using `{{ cookiecutter.collection_name }}`, feel
 
 If you have any questions or issues while using `{{ cookiecutter.collection_name }}`, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack).
 
+Feel free to ⭐️ or watch [`{{ cookiecutter.collection_name }}`](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) for updates too!
+
 ## Development
 
 If you'd like to install a version of `{{ cookiecutter.collection_name }}` for development, clone the repository and perform an editable install with `pip`:
