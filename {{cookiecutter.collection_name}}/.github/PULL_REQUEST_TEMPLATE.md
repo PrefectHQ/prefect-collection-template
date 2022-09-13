@@ -6,6 +6,7 @@ We've got a few requests to help us review contributions:
 - Make sure that your title neatly summarizes the proposed changes.
 - Provide a short overview of the change and the value it adds.
 - Share an example to help us understand the change in user experience.
+- Run `pre-commit install && pre-commit run --all` for linting.
 
 Happy engineering!
 -->
