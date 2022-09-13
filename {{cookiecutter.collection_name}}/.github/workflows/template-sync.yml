@@ -1,0 +1,60 @@
+name: Template Synchronization
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-for-update:
+    name: Check for template update
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - name: Install cruft
+        run: pip install cruft
+
+      - name: Check for update'
+        id: check
+        run: |
+          cruft check
+
+  submit-update-pr:
+    name: Submit update PR
+    runs-on: ubuntu-latest
+    needs: [check-for-update]
+    if: failure()
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - name: Install cruft
+        run: pip install cruft
+
+      - name: Perform updates
+        run: cruft update -y
+
+      - name: Submit PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Updating collection with changes to prefect-collection-template
+          token: ${{ secrets.COLLECTIONS_SYNC_API_KEY }}
+          branch: sync-with-template
+          delete-branch: true
+          title: Sync Collection with changes to prefect-collection-template
+          body: |
+            Automated PR created to propagate changes from prefect-collection-template to this collection
+
+            Feel free to make any necessary changes to this PR before merging.
+          labels: |
+            template sync
+            automated pr
