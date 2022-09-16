@@ -12,4 +12,3 @@ mock; python_version < '3.8'
 mkdocs-gen-files
 interrogate
 coverage
-cookiecutter>=1.7.0,<2.0.0
