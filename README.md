@@ -19,16 +19,16 @@ We're excited to see what you build!
 
 ## Quickstart
 
-Install `cookiecutter` if you have not already:
+Install `cruft` if you have not already:
 
 ```bash
-pip install cookiecutter
+pip install cruft
 ```
 
 Generate a Prefect Collection project:
 
 ```
-cookiecutter https://github.com/PrefectHQ/prefect-collection-template
+cruft create https://github.com/PrefectHQ/prefect-collection-template
 ```
 
 Refer to the MAINTAINERS.md in the generated project for how to get started developing Prefect tasks and flow.
@@ -44,7 +44,7 @@ pip install -r requirements-dev.txt
 To test generation of a Prefect Collection with your changes, run:
 
 ```
-cookiecutter .
+cruft create .
 ```
 
 To run tests, from the base directory of the repository, run:
