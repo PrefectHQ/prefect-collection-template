@@ -1,20 +1,20 @@
 # {{ cookiecutter.collection_name }}
 
-<a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI Version">
-    <img src="https://badge.fury.io/py/{{ cookiecutter.collection_name }}.svg" /></a>
-<a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
-    <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
-<a href="https://pepy.tech/badge/{{ cookiecutter.collection_name }}/" alt="Downloads">
-    <img src="https://pepy.tech/badge/{{ cookiecutter.collection_name }}" /></a>
-<a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pulse" alt="Activity">
-    <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
-<a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/graphs/contributors" alt="Contributors">
-    <img src="https://img.shields.io/github/contributors/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}" /></a>
-<br>
-<a href="https://prefect-community.slack.com" alt="Slack">
-    <img src="https://img.shields.io/badge/slack-join_community-red.svg?logo=slack" /></a>
-<a href="https://discourse.prefect.io/" alt="Discourse">
-    <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?logo=discourse" /></a>
+<p align="center">
+    <a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI version">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422"></a>
+    <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
+        <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
+    <a href="https://pepy.tech/badge/{{ cookiecutter.collection_name }}/" alt="Downloads">
+        <img src="https://img.shields.io/pypi/dm/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
+    <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
+    <br>
+    <a href="https://{{ cookiecutter.collection_name }}-community.slack.com" alt="Slack">
+        <img src="https://img.shields.io/badge/slack-join_community-red.svg?color=0052FF&labelColor=090422&logo=slack" /></a>
+    <a href="https://discourse.{{ cookiecutter.collection_name }}.io/" alt="Discourse">
+        <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?color=0052FF&labelColor=090422&logo=discourse" /></a>
+</p>
 
 ## Welcome!
 
@@ -42,6 +42,14 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
+Then, register to [view the block](https://orion-docs.prefect.io/ui/blocks/) on Prefect Cloud:
+
+```bash
+prefect block register -m {{ cookiecutter.collection_slug }}.credentials
+```
+
+Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
+
 ### Write and run a flow
 
 ```python
@@ -65,6 +73,8 @@ example_flow()
 If you encounter any bugs while using `{{ cookiecutter.collection_name }}`, feel free to open an issue in the [{{ cookiecutter.collection_name }}](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) repository.
 
 If you have any questions or issues while using `{{ cookiecutter.collection_name }}`, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack).
+
+Feel free to ⭐️ or watch [`{{ cookiecutter.collection_name }}`](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) for updates too!
 
 ## Development
 
