@@ -1,7 +1,7 @@
 site_name: {{ cookiecutter.collection_name }}
 site_url: https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}
 repo_url: https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}
-edit_uri: /edit/main/docs/
+edit_uri: edit/main/docs/
 theme:
   name: material
   favicon: img/favicon.ico
@@ -11,7 +11,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   logo:
-    img/prefect-logo-white.png
+    img/prefect-logo-mark-solid-white-500.png
   font:
     text: Inter
     code: Source Code Pro
