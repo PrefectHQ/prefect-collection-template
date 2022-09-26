@@ -95,9 +95,7 @@ Simiarly, `coverage` ensures that the codebase includes tests--the job has a fai
 
 ### Track Issues on Project Board
 
-To automatically add issues to a GitHub Project Board, you'll need two [secrets added](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment) to the repository:
-1. `ADD_TO_PROJECT_URL`: URL to the project board, formatted like `https://github.com/orgs/<GITHUB_ORGANIZATION>/projects/<PROJECT_NUMBER>`.
-2. `ADD_TO_PROJECT_PAT`: personal access token with `repo` and `project` scopes; click [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to see how to create one.
+To automatically add issues to a GitHub Project Board, you'll need a [secret added](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment) to the repository. Specifically, a secret named `ADD_TO_PROJECT_URL`, formatted like `https://github.com/orgs/<GITHUB_ORGANIZATION>/projects/<PROJECT_NUMBER>`.
 
 ### Package and Publish
 
