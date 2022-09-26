@@ -30,7 +30,7 @@ setup(
     extras_require={"dev": dev_requires},
     entry_points={
         "prefect.collections": [
-            "{{ cookiecutter.collection_name.split('-')[1:] | join | title }}Credentials = {{ cookiecutter.collection_slug }}.credentials",
+            "{{ cookiecutter.collection_slug }} = {{ cookiecutter.collection_slug }}",
         ]
     },
     classifiers=[
