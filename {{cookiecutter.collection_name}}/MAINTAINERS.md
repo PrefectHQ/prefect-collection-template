@@ -93,6 +93,10 @@ This collection comes with [GitHub Actions](https://docs.github.com/en/actions) 
 
 Simiarly, `coverage` ensures that the codebase includes tests--the job has a fail threshold of 80%, meaning that it will fail if more than 20% of the codebase is missing tests.
 
+### Track Issues on Project Board
+
+To automatically add issues to a GitHub Project Board, you'll need a [secret added](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment) to the repository. Specifically, a secret named `ADD_TO_PROJECT_URL`, formatted like `https://github.com/orgs/<GITHUB_ORGANIZATION>/projects/<PROJECT_NUMBER>`.
+
 ### Package and Publish
 
 GitHub actions will handle packaging and publishing of your collection to [PyPI](https://pypi.org/) so other Prefect users can your collection in their flows.
