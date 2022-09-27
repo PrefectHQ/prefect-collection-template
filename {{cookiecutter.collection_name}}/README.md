@@ -10,9 +10,9 @@
     <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
     <br>
-    <a href="https://{{ cookiecutter.collection_name }}-community.slack.com" alt="Slack">
+    <a href="https://prefect-community.slack.com" alt="Slack">
         <img src="https://img.shields.io/badge/slack-join_community-red.svg?color=0052FF&labelColor=090422&logo=slack" /></a>
-    <a href="https://discourse.{{ cookiecutter.collection_name }}.io/" alt="Discourse">
+    <a href="https://discourse.prefect.io/" alt="Discourse">
         <img src="https://img.shields.io/badge/discourse-browse_forum-red.svg?color=0052FF&labelColor=090422&logo=discourse" /></a>
 </p>
 
