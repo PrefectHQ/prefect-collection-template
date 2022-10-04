@@ -64,7 +64,8 @@ def example_flow():
 example_flow()
 ```
 
-### Diving Deeper
+### Diving deeper
+
 For more examples on how to use our collections and blocks, head to our [Prefect Recipes repo](https://github.com/PrefectHQ/prefect-recipes/)!
 
 ## Resources
