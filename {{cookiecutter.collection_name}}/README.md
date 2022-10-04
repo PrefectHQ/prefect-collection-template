@@ -64,6 +64,9 @@ def example_flow():
 example_flow()
 ```
 
+### Diving Deeper
+For more examples on how to use our collections and blocks, head to our [Prefect Recipes repo](https://github.com/PrefectHQ/prefect-recipes/)!
+
 ## Resources
 
 If you encounter any bugs while using `{{ cookiecutter.collection_name }}`, feel free to open an issue in the [{{ cookiecutter.collection_name }}](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) repository.
