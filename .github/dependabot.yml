@@ -10,3 +10,13 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/{{cookiecutter.collection_name}}/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    directory: "/{{cookiecutter.collection_name}}/"
+    schedule:
+      interval: "daily"
