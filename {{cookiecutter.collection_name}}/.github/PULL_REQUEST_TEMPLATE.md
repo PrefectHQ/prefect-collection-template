@@ -25,6 +25,8 @@ Any relevant screenshots, e.g.
 - [ ] References any related issue by including "Closes #<ISSUE_NUMBER>" or "Closes <Issue URL>"
 	- If no issue exists and your change is not a small fix, please [create an issue](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/issues/new/choose) first.
 - [ ] Includes tests or only affects documentation.
-- [ ] Installed `pre-commit` for linting (e.g. `pre-commit install && pre-commit run --all` to initialize).
-- [ ] Ensured docs look as to be expected `mkdocs serve` (e.g. `mkdocs serve`).
+- [ ] Passes `pre-commit` checks.
+  - Run `pre-commit install && pre-commit run --all` locally for formatting and linting.
+- [ ] Includes screenshots of documentation updates.
+  - Run `mkdocs serve` view documentation locally.
 - [ ] Summarized PR's changes in [CHANGELOG.md](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/blob/main/CHANGELOG.md)
