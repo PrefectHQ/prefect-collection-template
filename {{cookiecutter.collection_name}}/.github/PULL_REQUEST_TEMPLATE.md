@@ -29,4 +29,4 @@ Any relevant screenshots, e.g.
   - Run `pre-commit install && pre-commit run --all` locally for formatting and linting.
 - [ ] Includes screenshots of documentation updates.
   - Run `mkdocs serve` view documentation locally.
-- [ ] Summarized PR's changes in [CHANGELOG.md](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/blob/main/CHANGELOG.md)
+- [ ] Summarizes PR's changes in [CHANGELOG.md](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/blob/main/CHANGELOG.md)
