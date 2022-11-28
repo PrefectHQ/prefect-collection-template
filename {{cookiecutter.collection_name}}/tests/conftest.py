@@ -1,4 +1,6 @@
 import pytest
+from prefect.logging.configuration import setup_logging
+from prefect.logging.loggers import get_logger
 from prefect.testing.utilities import prefect_test_harness
 
 
