@@ -20,3 +20,20 @@ def reset_object_registry():
 
     with PrefectObjectRegistry():
         yield
+
+
+@pytest.fixture
+def caplog(caplog):
+    """
+    Overrides caplog to apply to all of our loggers that do not propagate and
+    consequently would not be captured by caplog.
+    """
+
+    config = setup_logging()
+
+    for name, logger_config in config["loggers"].items():
+        if not logger_config.get("propagate", True):
+            logger = get_logger(name)
+            logger.handlers.append(caplog.handler)
+
+    yield caplog
