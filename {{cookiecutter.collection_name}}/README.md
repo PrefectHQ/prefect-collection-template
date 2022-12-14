@@ -55,7 +55,7 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     hello_{{ cookiecutter.collection_slug }},
 )
 
-# Use `with_options` to customize settings on a task or flow defined in {{ cookiecutter.collection_slug }}:
+# Use `with_options` to customize options on any existing task or flow:
 
 custom_goodbye_{{ cookiecutter.collection_slug }} = goodbye_{{ cookiecutter.collection_slug }}.with_options(
     name="My custom task name",
