@@ -64,6 +64,25 @@ def example_flow():
 example_flow()
 ```
 
+To adjust settings on a pre-configured task or flow defined in a collection, use `with_options`:
+
+```python
+from prefect import flow
+from {{ cookiecutter.collection_slug }}.tasks import task_defined_in_{{ cookiecutter.collection_slug }}
+
+task_with_custom_settings = task_defined_in_{{ cookiecutter.collection_slug }}.with_options(
+    name="My custom task name",
+    max_retries=2,
+    retry_delay_seconds=10,
+)
+
+@flow
+def example_flow():
+    task_with_custom_settings()
+
+example_flow()
+```
+
 ## Resources
 
 If you encounter any bugs while using `{{ cookiecutter.collection_name }}`, feel free to open an issue in the [{{ cookiecutter.collection_name }}](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) repository.
