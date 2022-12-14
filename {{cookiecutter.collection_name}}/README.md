@@ -64,7 +64,7 @@ def example_flow():
 example_flow()
 ```
 
-To adjust settings on a pre-configured task or flow defined in a collection, use `with_options`:
+To adjust settings on a pre-configured task or flow defined in {{ cookiecutter.collection_slug }}, use `with_options`:
 
 ```python
 from prefect import flow
