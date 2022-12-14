@@ -59,7 +59,7 @@ from {{ cookiecutter.collection_slug }}.tasks import (
 
 custom_goodbye_{{ cookiecutter.collection_slug }} = goodbye_{{ cookiecutter.collection_slug }}.with_options(
     name="My custom task name",
-    max_retries=2,
+    retries=2,
     retry_delay_seconds=10,
 )
 
