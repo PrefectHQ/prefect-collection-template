@@ -55,22 +55,9 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     hello_{{ cookiecutter.collection_slug }},
 )
 
+# Use `with_options` to customize settings on a task or flow defined in {{ cookiecutter.collection_slug }}:
 
-@flow
-def example_flow():
-    hello_{{ cookiecutter.collection_slug }}
-    goodbye_{{ cookiecutter.collection_slug }}
-
-example_flow()
-```
-
-To adjust settings on a pre-configured task or flow defined in {{ cookiecutter.collection_slug }}, use `with_options`:
-
-```python
-from prefect import flow
-from {{ cookiecutter.collection_slug }}.tasks import task_defined_in_{{ cookiecutter.collection_slug }}
-
-task_with_custom_settings = task_defined_in_{{ cookiecutter.collection_slug }}.with_options(
+custom_goodbye_{{ cookiecutter.collection_slug }} = goodbye_{{ cookiecutter.collection_slug }}.with_options(
     name="My custom task name",
     max_retries=2,
     retry_delay_seconds=10,
@@ -78,7 +65,8 @@ task_with_custom_settings = task_defined_in_{{ cookiecutter.collection_slug }}.w
 
 @flow
 def example_flow():
-    task_with_custom_settings()
+    hello_{{ cookiecutter.collection_slug }}
+    custom_goodbye_{{ cookiecutter.collection_slug }}
 
 example_flow()
 ```
