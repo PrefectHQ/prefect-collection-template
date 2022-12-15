@@ -55,14 +55,23 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     hello_{{ cookiecutter.collection_slug }},
 )
 
+# Use `with_options` to customize options on any existing task or flow:
+
+custom_goodbye_{{ cookiecutter.collection_slug }} = goodbye_{{ cookiecutter.collection_slug }}.with_options(
+    name="My custom task name",
+    retries=2,
+    retry_delay_seconds=10,
+)
 
 @flow
 def example_flow():
     hello_{{ cookiecutter.collection_slug }}
-    goodbye_{{ cookiecutter.collection_slug }}
+    custom_goodbye_{{ cookiecutter.collection_slug }}
 
 example_flow()
 ```
+
+For more tips on how to use tasks and flows in a Collection, check out [Using Collections](https://orion-docs.prefect.io/collections/usage/)!
 
 ## Resources
 
