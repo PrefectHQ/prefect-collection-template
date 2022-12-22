@@ -38,13 +38,7 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
-Then, register to [view the block](https://orion-docs.prefect.io/ui/blocks/) on Prefect Cloud:
-
-```bash
-prefect block register -m {{ cookiecutter.collection_slug }}
-```
-
-Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
+A list of available blocks in `prefect-gcp` and their setup instructions can be found [here](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/#blocks-catalog/).
 
 ### Write and run a flow
 
