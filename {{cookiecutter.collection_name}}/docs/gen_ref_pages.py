@@ -49,7 +49,8 @@ def insert_blocks_catalog(generated_file):
     module_blocks = find_module_blocks()
     generated_file.write("## Blocks Catalog\n")
     generated_file.write(
-        "Below is a list of Blocks available for registration in `{{ cookiecutter.collection_name }}`.\n\n"
+        "Below is a list of Blocks available for registration in "
+        "`{{ cookiecutter.collection_name }}`.\n\n"
     )
     generated_file.write(
         "Note, to use the `load` method on Blocks, you must already have a block document "  # noqa
