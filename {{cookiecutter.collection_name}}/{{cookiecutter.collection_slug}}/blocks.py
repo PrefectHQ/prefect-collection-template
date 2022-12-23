@@ -20,7 +20,7 @@ class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block
     """
 
     _block_type_name = "{{ cookiecutter.collection_name.split('-')[1:] | join(' ') }}"
-    # _logo_url = "https://path/to/logo.png"
+    _logo_url = "https://url/to/logo.png"
 
     value: str = Field("The default value", description="The value to store")
 
