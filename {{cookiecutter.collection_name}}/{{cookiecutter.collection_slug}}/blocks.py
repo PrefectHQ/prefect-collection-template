@@ -20,7 +20,8 @@ class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block
     """
 
     _block_type_name = "{{ cookiecutter.collection_name.split('-')[1:] | join(' ') }}"
-    _logo_url = "https://url/to/logo.png"
+    # default to Prefect logo
+    _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/08yCE6xpJMX9Kjl5VArDS/c2ede674c20f90b9b6edeab71feffac9/prefect-200x200.png?h=250"  # noqa
 
     value: str = Field("The default value", description="The value to store")
 
