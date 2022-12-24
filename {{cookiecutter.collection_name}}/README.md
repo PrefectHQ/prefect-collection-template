@@ -38,7 +38,7 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
-A list of available blocks in `prefect-gcp` and their setup instructions can be found [here](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/#blocks-catalog/).
+A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/#blocks-catalog/).
 
 ### Write and run a flow
 
@@ -49,7 +49,7 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     hello_{{ cookiecutter.collection_slug }},
 )
 
-# Use `with_options` to customize options on any existing task or flow:
+# Use `with_options` to customize options on any existing task or flow
 
 custom_goodbye_{{ cookiecutter.collection_slug }} = goodbye_{{ cookiecutter.collection_slug }}.with_options(
     name="My custom task name",
