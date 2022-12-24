@@ -75,7 +75,6 @@ def insert_blocks_catalog(generated_file):
 
                 my_flow()
                 ```
-                </details>
                 """
             )
         )
