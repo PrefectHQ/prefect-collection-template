@@ -86,10 +86,8 @@ Feel free to ⭐️ or watch [`{{ cookiecutter.collection_name }}`](https://gith
 If you'd like to help contribute to fix an issue or add a feature to `{{ cookiecutter.collection_name }}`, please [propose changes through a pull request from a fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 ### Contribution Steps:
-1. Fork the repository: https://docs.github.com/en/get-started/quickstart/fork-a-repo
-2. Clone the repository (replace {{ cookiecutter.github_organization }} with your GitHub handle):
-```bash
-# link to your forked repository
+1. [Fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
+2. [Clone the forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository)
 git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}.git
 3. Install the repository and its dependencies:
 ```
