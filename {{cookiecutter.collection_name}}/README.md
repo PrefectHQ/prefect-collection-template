@@ -88,7 +88,6 @@ If you'd like to help contribute to fix an issue or add a feature to `{{ cookiec
 ### Contribution Steps:
 1. [Fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
 2. [Clone the forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository)
-git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}.git
 3. Install the repository and its dependencies:
 ```
 pip install -e ".[dev]"
