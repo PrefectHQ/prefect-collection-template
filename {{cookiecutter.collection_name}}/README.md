@@ -38,7 +38,7 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
-A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/#blocks-catalog/).
+A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/#blocks-catalog/).
 
 ### Write and run a flow
 
@@ -73,7 +73,7 @@ If you encounter any bugs while using `{{ cookiecutter.collection_name }}`, feel
 
 If you have any questions or issues while using `{{ cookiecutter.collection_name }}`, you can find help in either the [Prefect Discourse forum](https://discourse.prefect.io/) or the [Prefect Slack community](https://prefect.io/slack).
 
-Feel free to ⭐️ or watch [`{{ cookiecutter.collection_name }}`](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) for updates too!
+Feel free to star or watch [`{{ cookiecutter.collection_name }}`](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) for updates too!
 
 ## Contribute
 
