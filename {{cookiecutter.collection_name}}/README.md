@@ -38,13 +38,7 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
-Then, register to [view the block](https://orion-docs.prefect.io/ui/blocks/) on Prefect Cloud:
-
-```bash
-prefect block register -m {{ cookiecutter.collection_slug }}
-```
-
-Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
+A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/#blocks-catalog/).
 
 ### Write and run a flow
 
@@ -55,7 +49,7 @@ from {{ cookiecutter.collection_slug }}.tasks import (
     hello_{{ cookiecutter.collection_slug }},
 )
 
-# Use `with_options` to customize options on any existing task or flow:
+# Use `with_options` to customize options on any existing task or flow
 
 custom_goodbye_{{ cookiecutter.collection_slug }} = goodbye_{{ cookiecutter.collection_slug }}.with_options(
     name="My custom task name",
