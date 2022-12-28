@@ -81,17 +81,28 @@ If you have any questions or issues while using `{{ cookiecutter.collection_name
 
 Feel free to ⭐️ or watch [`{{ cookiecutter.collection_name }}`](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}) for updates too!
 
-## Development
+## Contribute
 
-If you'd like to install a version of `{{ cookiecutter.collection_name }}` for development, clone the repository and perform an editable install with `pip`:
+If you'd like to help contribute to fix an issue or add a feature to `{{ cookiecutter.collection_name }}`, please [propose changes through a pull request from a fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
+### General Steps:
+1. Fork the repository: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+2. Clone the repository (replace {{ cookiecutter.github_organization }} with your GitHub handle):
 ```bash
+# link to your forked repository
 git clone https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}.git
-
-cd {{ cookiecutter.collection_name }}/
-
+```
+3. Install the repository and its dependencies:
+```
 pip install -e ".[dev]"
-
-# Install linting pre-commit hooks
+```
+4. Make desired changes.
+5. Add tests.
+6. Insert an entry to [CHANGELOG.md](https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/blob/main/CHANGELOG.md)
+7. Install and run `pre-commit`:
+```
 pre-commit install
+```
+8. `git commit`, `git push`, and create a pull request.
+
 ```
