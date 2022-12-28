@@ -38,7 +38,7 @@ def insert_blocks_catalog(generated_file):
         dedent(
             f"""
             Below is a list of Blocks available for registration in
-            `{{ cookiecutter.COLLECTION_SLUG }}`.
+            `{{ cookiecutter.collection_name }}`.
 
             To register blocks in this module to
             [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
@@ -76,7 +76,6 @@ def insert_blocks_catalog(generated_file):
 
                 my_flow()
                 ```
-                </details>
                 """
             )
         )
