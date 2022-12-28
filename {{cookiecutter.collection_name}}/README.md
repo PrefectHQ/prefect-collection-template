@@ -101,5 +101,3 @@ pip install -e ".[dev]"
 pre-commit install
 ```
 8. `git commit`, `git push`, and create a pull request.
-
-```
