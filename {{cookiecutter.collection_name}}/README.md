@@ -1,5 +1,7 @@
 # {{ cookiecutter.collection_name }}
 
+Visit the full docs [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}) to see additional examples and the API reference.
+
 <p align="center">
     <a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422"></a>
