@@ -67,6 +67,7 @@ nav:
     - Tasks: tasks.md
     - Flows: flows.md
 
+{%- if cookiecutter.github_organization.lower() == "prefecthq" -%}
 extra:
     social:
         - icon: fontawesome/brands/slack
@@ -87,3 +88,4 @@ extra:
           link: https://hub.docker.com/r/prefecthq/prefect/
         - icon: fontawesome/brands/python
           link: https://pypi.org/project/prefect/
+{% endif %}
