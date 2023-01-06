@@ -4,4 +4,4 @@
 
 # Traceback / Example
 
-- [ ] I would like to help contribute a pull request to resolve this!
+- [ ] I would like to [help contribute](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/#contributing) a pull request to resolve this!
