@@ -66,8 +66,7 @@ nav:
     - Home: index.md
     - Tasks: tasks.md
     - Flows: flows.md
-
-{%- if cookiecutter.github_organization.lower() == "prefecthq" -%}
+{% if cookiecutter.github_organization.lower() == "prefecthq" %}
 extra:
     social:
         - icon: fontawesome/brands/slack
