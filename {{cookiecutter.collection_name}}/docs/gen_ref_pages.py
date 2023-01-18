@@ -4,23 +4,22 @@ generates a list of them in the docs under the Blocks Catalog heading.
 """
 
 import re
+from collections import defaultdict
+from inspect import getmembers, isclass, isfunction, ismodule
 from pathlib import Path
 from textwrap import dedent
+from typing import Any, Set
 
 import mkdocs_gen_files
+from griffe.dataclasses import Docstring
+from griffe.docstrings.dataclasses import DocstringSectionKind
+from griffe.docstrings.parsers import Parser, parse
 from prefect.blocks.core import Block
+from prefect.logging.loggers import disable_logger
 from prefect.utilities.dispatch import get_registry_for_type
 from prefect.utilities.importtools import to_qualified_name
-from prefect.utilities.callables import parameter_schema
-import prefect_openai
-from typing import Set, Any
-from collections import defaultdict
-from prefect.utilities.callables import parameter_docstrings
-from griffe.docstrings.parsers import Parser, parse
-from griffe.dataclasses import Docstring
-from griffe.docstrings.dataclasses import DocstringSection, DocstringSectionKind
-from inspect import getmembers, isfunction, isclass, ismethod, ismodule
-from prefect.logging.loggers import disable_logger
+
+import {{ cookiecutter.collection_name }}
 
 COLLECTION_SLUG = "{{ cookiecutter.collection_slug }}"
 
@@ -39,6 +38,7 @@ with open(readme_path, "r") as readme:
     mkdocs_gen_files.set_edit_path(Path(docs_index_path), readme_path)
 
 # Blocks Catalog page
+
 
 def find_module_blocks():
     blocks = get_registry_for_type(Block)
@@ -65,7 +65,7 @@ def insert_blocks_catalog(generated_file):
         dedent(
             f"""
             Below is a list of Blocks available for registration in
-            `{{ cookiecutter.collection_name }}`.
+            `"{{ cookiecutter.collection_name }}"`.
 
             To register blocks in this module to
             [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
@@ -84,7 +84,9 @@ def insert_blocks_catalog(generated_file):
     for module_nesting, block_names in module_blocks.items():
         module_path = " ".join(module_nesting)
         module_title = module_path.replace("_", " ").title()
-        generated_file.write(f"## [{module_title} Module][{COLLECTION_SLUG}.{module_path}]\n")
+        generated_file.write(
+            f"## [{module_title} Module][{COLLECTION_SLUG}.{module_path}]\n"
+        )
         for block_name in block_names:
             generated_file.write(
                 f"[{block_name}][{COLLECTION_SLUG}.{module_path}.{block_name}]\n"
@@ -107,11 +109,13 @@ def insert_blocks_catalog(generated_file):
                 )
             )
 
+
 blocks_catalog_path = Path("blocks_catalog.md")
 with mkdocs_gen_files.open(blocks_catalog_path, "w") as generated_file:
     insert_blocks_catalog(generated_file)
 
 # Examples Catalog page
+
 
 def skip_code_example(code_example: str) -> bool:
     """
@@ -146,8 +150,9 @@ def get_code_examples(obj: Any) -> Set[str]:
 
     return code_examples
 
+
 code_examples_grouping = defaultdict(set)
-for module_name, module_obj in getmembers(prefect_openai, ismodule):
+for module_name, module_obj in getmembers("{{ cookiecutter.collection_slug }}", ismodule):
 
     # find all module examples
     if module_name.startswith("_"):
@@ -164,7 +169,7 @@ for module_name, module_obj in getmembers(prefect_openai, ismodule):
                 continue
             code_examples_grouping[module_name] |= get_code_examples(method_obj)
 
-    # find all function examples    
+    # find all function examples
     for function_name, function_obj in getmembers(module_obj, isfunction):
         if function_obj.__doc__ is None or function_name.startswith("_"):
             continue
@@ -178,7 +183,7 @@ with mkdocs_gen_files.open(examples_catalog_path, "w") as generated_file:
             """
             # Examples Catalog
 
-            Below is a list of examples for `prefect-openai`.
+            Below is a list of examples for `{{ cookiecutter.collection_name }}`.
             """
         )
     )
@@ -186,6 +191,8 @@ with mkdocs_gen_files.open(examples_catalog_path, "w") as generated_file:
         if len(code_examples) == 0:
             continue
         module_title = module_name.replace("_", " ").title()
-        generated_file.write(f"## [{module_title} Module][{COLLECTION_SLUG}.{module_name}]\n")
+        generated_file.write(
+            f"## [{module_title} Module][{COLLECTION_SLUG}.{module_name}]\n"
+        )
         for code_example in code_examples:
             generated_file.write(code_example + "\n")
