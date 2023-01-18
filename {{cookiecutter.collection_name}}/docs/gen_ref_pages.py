@@ -39,7 +39,6 @@ with open(readme_path, "r") as readme:
 
 # Blocks Catalog page
 
-
 def find_module_blocks():
     blocks = get_registry_for_type(Block)
     collection_blocks = [
@@ -116,6 +115,17 @@ with mkdocs_gen_files.open(blocks_catalog_path, "w") as generated_file:
 
 # Examples Catalog page
 
+def skip_parsing(name, obj, module_nesting):
+    """
+    Skips parsing the object if it's a private method or if it's not in the
+    right module.
+    """
+    try:
+        wrong_module = not to_qualified_name(obj).startswith(module_nesting)
+    except AttributeError:
+        wrong_module = False
+    return obj.__doc__ is None or name.startswith("_") or wrong_module
+
 
 def skip_code_example(code_example: str) -> bool:
     """
@@ -152,29 +162,29 @@ def get_code_examples(obj: Any) -> Set[str]:
 
 
 code_examples_grouping = defaultdict(set)
-for module_name, module_obj in getmembers("{{ cookiecutter.collection_slug }}", ismodule):
+for module_name, module_obj in getmembers({{ cookiecutter.collection_slug }}, ismodule):
 
+    module_nesting = f"{COLLECTION_SLUG}.{module_name}"
     # find all module examples
-    if module_name.startswith("_"):
+    if skip_parsing(module_name, module_obj, module_nesting):
         continue
     code_examples_grouping[module_name] |= get_code_examples(module_obj)
 
     # find all class and method examples
     for class_name, class_obj in getmembers(module_obj, isclass):
-        if class_obj.__doc__ is None or class_name.startswith("_"):
+        if skip_parsing(class_name, class_obj, module_nesting):
             continue
         code_examples_grouping[module_name] |= get_code_examples(class_obj)
         for method_name, method_obj in getmembers(class_obj, isfunction):
-            if method_obj.__doc__ is None or method_name.startswith("_"):
+            if skip_parsing(method_name, method_obj, module_nesting):
                 continue
             code_examples_grouping[module_name] |= get_code_examples(method_obj)
 
     # find all function examples
     for function_name, function_obj in getmembers(module_obj, isfunction):
-        if function_obj.__doc__ is None or function_name.startswith("_"):
+        if skip_parsing(function_name, function_obj, module_nesting):
             continue
         code_examples_grouping[module_name] |= get_code_examples(function_obj)
-
 
 examples_catalog_path = Path("examples_catalog.md")
 with mkdocs_gen_files.open(examples_catalog_path, "w") as generated_file:
