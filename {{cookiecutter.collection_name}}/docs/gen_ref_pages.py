@@ -25,6 +25,7 @@ COLLECTION_SLUG = "{{ cookiecutter.collection_slug }}"
 
 # Home page
 
+
 readme_path = Path("README.md")
 docs_index_path = Path("index.md")
 
@@ -38,6 +39,7 @@ with open(readme_path, "r") as readme:
     mkdocs_gen_files.set_edit_path(Path(docs_index_path), readme_path)
 
 # Blocks Catalog page
+
 
 def find_module_blocks():
     blocks = get_registry_for_type(Block)
@@ -114,6 +116,7 @@ with mkdocs_gen_files.open(blocks_catalog_path, "w") as generated_file:
     insert_blocks_catalog(generated_file)
 
 # Examples Catalog page
+
 
 def skip_parsing(name, obj, module_nesting):
     """
