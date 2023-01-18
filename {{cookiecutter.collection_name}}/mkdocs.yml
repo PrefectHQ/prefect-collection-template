@@ -70,8 +70,12 @@ watch:
 
 nav:
     - Home: index.md
-    - Tasks: tasks.md
-    - Flows: flows.md
+    - Blocks Catalog: blocks_catalog.md
+    - Examples Catalog: examples_catalog.md
+    - API Reference:
+        - Tasks: tasks.md
+        - Flows: flows.md
+
 {% if cookiecutter.github_organization.lower() == "prefecthq" %}
 extra:
     social:
