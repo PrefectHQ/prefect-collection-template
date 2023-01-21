@@ -93,4 +93,7 @@ extra:
           link: https://hub.docker.com/r/prefecthq/prefect/
         - icon: fontawesome/brands/python
           link: https://pypi.org/project/prefect/
+    analytics:
+        provider: google
+        property: G-8CSMBCQDKN
 {% endif %}
