@@ -70,7 +70,7 @@ from {{ cookiecutter.collection_slug }} import Block`
 Block(api_key="API_KEY_PLACEHOLDER").save("BLOCK_NAME_PLACEHOLDER")
 ```
 
-Congrats! You can now easily load the saved block, which holds your OpenAI API key:
+Congrats! You can now easily load the saved block, which holds your credentials:
 
 ```python
 from {{ cookiecutter.collection_slug }} import Block
