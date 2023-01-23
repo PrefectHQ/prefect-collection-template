@@ -1,7 +1,9 @@
-# {{ cookiecutter.collection_name }}
+# Coordinate and incorporate {{ cookiecutter.collection_name.split('-')[1:] | join | title}} in your dataflow with {{ cookiecutter.collection_name }}
 
 <p align="center">
-    <!--- Insert a cover image here -->
+    <!--- Insert a cover image here
+    <img src="I_usually_paste_the_image_on_github_UI_so_it_creates_link">
+    -->
     <!--- <br> -->
     <a href="https://pypi.python.org/pypi/{{ cookiecutter.collection_name }}/" alt="PyPI version">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422"></a>
@@ -60,7 +62,7 @@ These tasks are designed to work with Prefect 2.0. For more information about ho
 Replace this with actual instructions on how to get API key or token.
 
 1. Head over to 
-2. Login to your SERVICE account
+2. Login to your {{ cookiecutter.collection_name.split('-')[1:] | join | title}} account
 3. Click "+ Create new secret key"
 4. Copy the generated API key
 5. Create a short script, replacing the placeholders (or do so in the UI)
