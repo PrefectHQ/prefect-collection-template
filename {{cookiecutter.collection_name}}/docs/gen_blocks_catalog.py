@@ -38,15 +38,33 @@ def insert_blocks_catalog(generated_file):
     generated_file.write(
         dedent(
             f"""
-            Below is a list of Blocks available for registration in
-            `{{ cookiecutter.collection_name }}`.
+            Blocks are a primitive within Prefect that enable the storage of
+            configuration and provide an interface for interacting with
+            external systems.
 
-            To register blocks in this module to
+            Blocks are useful for configuration that needs to be shared across
+            flow runs and between flows.
+
+            Below is a list of Blocks available for registration in
+            `{{ cookiecutter.collection_name }}`. Be sure to first register them so to
             [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
-            on Prefect Cloud:
+            on Prefect Cloud or Orion:
             ```bash
             prefect block register -m {COLLECTION_SLUG}
             ```
+
+            !!! warning "Using the `load` method on Blocks"
+                To call `load` on a block,
+                a block document must have already been [saved through code](
+                    https://orion-docs.prefect.io/concepts/blocks/#saving-blocks)
+                or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/)!
+
+            For examples of how to use the following blocks,
+            check out the [Examples Catalog](../examples_catalog).
+
+            Visit the docs
+            [here](https://docs.prefect.io/concepts/blocks/#using-existing-block-types)
+            for more information about blocks.
             """
         )
     )
