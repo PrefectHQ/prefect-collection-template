@@ -9,7 +9,7 @@ from textwrap import dedent
 import mkdocs_gen_files
 from prefect.blocks.core import Block
 from prefect.utilities.dispatch import get_registry_for_type
-from prefect.utilities.importtools import to_qualified_name
+from prefect.utilities.importtools import from_qualified_name, to_qualified_name
 
 COLLECTION_SLUG = "{{ cookiecutter.collection_slug }}"
 
@@ -38,33 +38,15 @@ def insert_blocks_catalog(generated_file):
     generated_file.write(
         dedent(
             f"""
-            Blocks are a primitive within Prefect that enable the storage of
-            configuration and provide an interface for interacting with
-            external systems.
-
-            Blocks are useful for configuration that needs to be shared across
-            flow runs and between flows.
-
             Below is a list of Blocks available for registration in
-            `{{ cookiecutter.collection_name }}`. Be sure to first register them so to
+            `{{ cookiecutter.collection_name }}`.
+
+            To register blocks in this module to
             [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
-            on Prefect Cloud or Orion:
+            on Prefect Cloud:
             ```bash
             prefect block register -m {COLLECTION_SLUG}
             ```
-
-            !!! warning "Using the `load` method on Blocks"
-                To call `load` on a block,
-                a block document must have already been [saved through code](
-                    https://orion-docs.prefect.io/concepts/blocks/#saving-blocks)
-                or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/)!
-
-            For examples of how to use the following blocks,
-            check out the [Examples Catalog](../examples_catalog).
-
-            Visit the docs
-            [here](https://docs.prefect.io/concepts/blocks/#using-existing-block-types)
-            for more information about blocks.
             """
         )
     )
@@ -74,14 +56,21 @@ def insert_blocks_catalog(generated_file):
         "or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).\n"
     )
     for module_nesting, block_names in module_blocks.items():
-        module_path = " ".join(module_nesting)
-        module_title = module_path.replace("_", " ").title()
-        generated_file.write(
-            f"## [{module_title} Module][{COLLECTION_SLUG}.{module_path}]\n"
+        module_path = f"{COLLECTION_SLUG}." + " ".join(module_nesting)
+        module_title = (
+            module_path.replace(COLLECTION_SLUG, "")
+            .lstrip(".")
+            .replace("_", " ")
+            .title()
         )
+        generated_file.write(f"## [{module_title} Module][{module_path}]\n")
         for block_name in block_names:
+            block_obj = from_qualified_name(f"{module_path}.{block_name}")
+            block_description = block_obj.get_description()
+            if not block_description.endswith("."):
+                block_description += "."
             generated_file.write(
-                f"[{block_name}][{COLLECTION_SLUG}.{module_path}.{block_name}]\n"
+                f"[{block_name}][{module_path}.{block_name}]\n\n{block_description}\n\n"
             )
             generated_file.write(
                 dedent(
@@ -89,7 +78,7 @@ def insert_blocks_catalog(generated_file):
                     To load the {block_name}:
                     ```python
                     from prefect import flow
-                    from {COLLECTION_SLUG}.{module_path} import {block_name}
+                    from {module_path} import {block_name}
 
                     @flow
                     def my_flow():
@@ -100,6 +89,11 @@ def insert_blocks_catalog(generated_file):
                     """
                 )
             )
+        generated_file.write(
+            f"For additional examples, check out the [{module_title} Module]"
+            f"(../examples_catalog/#{module_nesting[-1]}-module) "
+            f"under Examples Catalog.\n"
+        )
 
 
 blocks_catalog_path = Path("blocks_catalog.md")
