@@ -1,6 +1,6 @@
 """
-Copies README.md to index.md. Also discovers all blocks and
-generates a list of them in the docs under the Blocks Catalog heading.
+Discovers all blocks and generates a list of them in the docs
+under the Blocks Catalog heading.
 """
 
 from pathlib import Path
@@ -9,7 +9,7 @@ from textwrap import dedent
 import mkdocs_gen_files
 from prefect.blocks.core import Block
 from prefect.utilities.dispatch import get_registry_for_type
-from prefect.utilities.importtools import to_qualified_name
+from prefect.utilities.importtools import from_qualified_name, to_qualified_name
 
 COLLECTION_SLUG = "{{ cookiecutter.collection_slug }}"
 
@@ -35,7 +35,6 @@ def insert_blocks_catalog(generated_file):
     module_blocks = find_module_blocks()
     if len(module_blocks) == 0:
         return
-    generated_file.write("## Blocks Catalog\n")
     generated_file.write(
         dedent(
             f"""
@@ -57,42 +56,46 @@ def insert_blocks_catalog(generated_file):
         "or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).\n"
     )
     for module_nesting, block_names in module_blocks.items():
-        module_path = " ".join(module_nesting)
-        module_title = module_path.replace("_", " ").title()
-        generated_file.write(f"### {module_title} Module\n")
+        module_path = f"{COLLECTION_SLUG}." + " ".join(module_nesting)
+        module_title = (
+            module_path.replace(COLLECTION_SLUG, "")
+            .lstrip(".")
+            .replace("_", " ")
+            .title()
+        )
+        generated_file.write(f"## [{module_title} Module][{module_path}]\n")
         for block_name in block_names:
+            block_obj = from_qualified_name(f"{module_path}.{block_name}")
+            block_description = block_obj.get_description()
+            if not block_description.endswith("."):
+                block_description += "."
             generated_file.write(
-                f"- **[{block_name}][{COLLECTION_SLUG}.{module_path}.{block_name}]**\n"
+                f"[{block_name}][{module_path}.{block_name}]\n\n{block_description}\n\n"
+            )
+            generated_file.write(
+                dedent(
+                    f"""
+                    To load the {block_name}:
+                    ```python
+                    from prefect import flow
+                    from {module_path} import {block_name}
+
+                    @flow
+                    def my_flow():
+                        my_block = {block_name}.load("MY_BLOCK_NAME")
+
+                    my_flow()
+                    ```
+                    """
+                )
             )
         generated_file.write(
-            dedent(
-                f"""
-                To load the {block_name}:
-                ```python
-                from prefect import flow
-                from {COLLECTION_SLUG}.{module_path} import {block_name}
-
-                @flow
-                def my_flow():
-                    my_block = {block_name}.load("MY_BLOCK_NAME")
-
-                my_flow()
-                ```
-                """
-            )
+            f"For additional examples, check out the [{module_title} Module]"
+            f"(../examples_catalog/#{module_nesting[-1]}-module) "
+            f"under Examples Catalog.\n"
         )
 
 
-readme_path = Path("README.md")
-docs_index_path = Path("index.md")
-
-with open(readme_path, "r") as readme:
-    with mkdocs_gen_files.open(docs_index_path, "w") as generated_file:
-        for line in readme:
-            if line.startswith("Visit the full docs [here]("):
-                continue  # prevent linking to itself
-            if line.startswith("## Resources"):
-                insert_blocks_catalog(generated_file)
-            generated_file.write(line)
-
-    mkdocs_gen_files.set_edit_path(Path(docs_index_path), readme_path)
+blocks_catalog_path = Path("blocks_catalog.md")
+with mkdocs_gen_files.open(blocks_catalog_path, "w") as generated_file:
+    insert_blocks_catalog(generated_file)
