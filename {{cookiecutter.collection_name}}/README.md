@@ -1,4 +1,4 @@
-# Coordinate and integrate {{ cookiecutter.collection_name.split('-')[1:] | join | title}} into your dataflow with {{ cookiecutter.collection_name }}
+# Integrate {{ cookiecutter.collection_name.split('-')[1:] | join | title}} into your dataflow with {{ cookiecutter.collection_name }}
 
 <p align="center">
     <!--- Insert a cover image here
