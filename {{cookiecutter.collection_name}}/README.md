@@ -47,8 +47,6 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
-A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks-catalog).
-
 Requires an installation of Python 3.7+.
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
@@ -84,6 +82,8 @@ To [view and edit the blocks](https://orion-docs.prefect.io/ui/blocks/) on Prefe
 ```bash
 prefect block register -m prefect_dbt
 ```
+
+A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks-catalog).
 
 --->
 
