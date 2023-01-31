@@ -57,13 +57,15 @@ These tasks are designed to work with Prefect 2.0. For more information about ho
 
 <!--- ### Saving credentials to block
 
-Replace this with actual instructions on how to get API key or token.
+Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
 
-1. Head over to 
-2. Login to your SERVICE account
-3. Click "+ Create new secret key"
-4. Copy the generated API key
-5. Create a short script, replacing the placeholders (or do so in the UI)
+Below is a walkthrough on saving block documents through code.
+
+1. Head over to <SERVICE_URL>.
+2. Login to your <SERVICE> account.
+3. Click "+ Create new secret key".
+4. Copy the generated API key.
+5. Create a short script, replacing the placeholders (or do so in the UI).
 
 ```python
 from {{ cookiecutter.collection_slug }} import Block`
@@ -76,6 +78,13 @@ Congrats! You can now easily load the saved block, which holds your credentials:
 from {{ cookiecutter.collection_slug }} import Block
 Block.load("BLOCK_NAME_PLACEHOLDER")
 ```
+
+To [view and edit the blocks](https://orion-docs.prefect.io/ui/blocks/) on Prefect UI:
+
+```bash
+prefect block register -m prefect_dbt
+```
+
 --->
 
 ### Feedback
