@@ -37,7 +37,7 @@ def insert_blocks_catalog(generated_file):
         return
     generated_file.write(
         dedent(
-            f"""  # noqa
+            f"""
             Below is a list of Blocks available for registration in
             `{{ cookiecutter.collection_name }}`.
 
@@ -49,7 +49,7 @@ def insert_blocks_catalog(generated_file):
             ```bash
             prefect block register -m {COLLECTION_SLUG}
             ```
-            """
+            """  # noqa
         )
     )
     generated_file.write(
