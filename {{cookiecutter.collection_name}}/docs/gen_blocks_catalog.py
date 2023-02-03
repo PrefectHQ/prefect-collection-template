@@ -37,13 +37,15 @@ def insert_blocks_catalog(generated_file):
         return
     generated_file.write(
         dedent(
-            f"""
+            f"""  # noqa
             Below is a list of Blocks available for registration in
             `{{ cookiecutter.collection_name }}`.
 
             To register blocks in this module to
             [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
-            on Prefect Cloud:
+            on Prefect Cloud, first [install the required packages](
+            https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/#installation),
+            then
             ```bash
             prefect block register -m {COLLECTION_SLUG}
             ```
