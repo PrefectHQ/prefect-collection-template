@@ -47,8 +47,6 @@ Install `{{ cookiecutter.collection_name }}` with `pip`:
 pip install {{ cookiecutter.collection_name }}
 ```
 
-A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks-catalog).
-
 Requires an installation of Python 3.7+.
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
@@ -57,13 +55,15 @@ These tasks are designed to work with Prefect 2.0. For more information about ho
 
 <!--- ### Saving credentials to block
 
-Replace this with actual instructions on how to get API key or token.
+Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
 
-1. Head over to 
-2. Login to your SERVICE account
-3. Click "+ Create new secret key"
-4. Copy the generated API key
-5. Create a short script, replacing the placeholders (or do so in the UI)
+Below is a walkthrough on saving block documents through code.
+
+1. Head over to <SERVICE_URL>.
+2. Login to your <SERVICE> account.
+3. Click "+ Create new secret key".
+4. Copy the generated API key.
+5. Create a short script, replacing the placeholders (or do so in the UI).
 
 ```python
 from {{ cookiecutter.collection_slug }} import Block`
@@ -76,6 +76,19 @@ Congrats! You can now easily load the saved block, which holds your credentials:
 from {{ cookiecutter.collection_slug }} import Block
 Block.load("BLOCK_NAME_PLACEHOLDER")
 ```
+
+!!! info Registering blocks
+
+Register blocks in this module to
+[view and edit them](https://orion-docs.prefect.io/ui/blocks/)
+on Prefect Cloud:
+
+```bash
+prefect block register -m {{ cookiecutter.collection_slug }}
+```
+
+A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks_catalog).
+
 --->
 
 ### Feedback
