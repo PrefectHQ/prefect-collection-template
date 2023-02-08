@@ -87,7 +87,7 @@ on Prefect Cloud:
 prefect block register -m {{ cookiecutter.collection_slug }}
 ```
 
-A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks-catalog).
+A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks_catalog).
 
 --->
 
