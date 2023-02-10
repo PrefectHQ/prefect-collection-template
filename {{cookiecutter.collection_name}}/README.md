@@ -66,7 +66,7 @@ Below is a walkthrough on saving block documents through code.
 5. Create a short script, replacing the placeholders (or do so in the UI).
 
 ```python
-from {{ cookiecutter.collection_slug }} import Block`
+from {{ cookiecutter.collection_slug }} import Block
 Block(api_key="API_KEY_PLACEHOLDER").save("BLOCK_NAME_PLACEHOLDER")
 ```
 
