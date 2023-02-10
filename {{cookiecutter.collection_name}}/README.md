@@ -77,15 +77,15 @@ from {{ cookiecutter.collection_slug }} import Block
 Block.load("BLOCK_NAME_PLACEHOLDER")
 ```
 
-!!! info Registering blocks
+!!! info "Registering blocks"
 
-Register blocks in this module to
-[view and edit them](https://orion-docs.prefect.io/ui/blocks/)
-on Prefect Cloud:
+    Register blocks in this module to
+    [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
+    on Prefect Cloud:
 
-```bash
-prefect block register -m {{ cookiecutter.collection_slug }}
-```
+    ```bash
+    prefect block register -m {{ cookiecutter.collection_slug }}
+    ```
 
 A list of available blocks in `{{ cookiecutter.collection_name }}` and their setup instructions can be found [here](https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks_catalog).
 
