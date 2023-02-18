@@ -6,6 +6,7 @@ import re
 from collections import defaultdict
 from inspect import getmembers, isclass, isfunction
 from pathlib import Path
+from pkgutil import iter_modules
 from textwrap import dedent
 from types import ModuleType
 from typing import Callable, Set, Union
@@ -15,7 +16,7 @@ from griffe.dataclasses import Docstring
 from griffe.docstrings.dataclasses import DocstringSectionKind
 from griffe.docstrings.parsers import Parser, parse
 from prefect.logging.loggers import disable_logger
-from prefect.utilities.importtools import to_qualified_name
+from prefect.utilities.importtools import load_module, to_qualified_name
 
 import {{ cookiecutter.collection_slug }}
 
