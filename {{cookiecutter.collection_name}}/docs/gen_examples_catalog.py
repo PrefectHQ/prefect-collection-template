@@ -4,7 +4,7 @@ Locates all the examples in the Collection and puts them in a single page.
 
 import re
 from collections import defaultdict
-from inspect import getmembers, isclass, isfunction, ismodule
+from inspect import getmembers, isclass, isfunction
 from pathlib import Path
 from textwrap import dedent
 from types import ModuleType
@@ -70,9 +70,11 @@ def get_code_examples(obj: Union[ModuleType, Callable]) -> Set[str]:
 
 
 code_examples_grouping = defaultdict(set)
-for module_name, module_obj in getmembers({{ cookiecutter.collection_slug }}, ismodule):
+for _, module_name, ispkg in iter_modules({{ cookiecutter.collection_slug }}.__path__):
 
     module_nesting = f"{COLLECTION_SLUG}.{module_name}"
+    module_obj = load_module(module_nesting)
+
     # find all module examples
     if skip_parsing(module_name, module_obj, module_nesting):
         continue
@@ -89,7 +91,7 @@ for module_name, module_obj in getmembers({{ cookiecutter.collection_slug }}, is
             code_examples_grouping[module_name] |= get_code_examples(method_obj)
 
     # find all function examples
-    for function_name, function_obj in getmembers(module_obj, isfunction):
+    for function_name, function_obj in getmembers(module_obj, callable):
         if skip_parsing(function_name, function_obj, module_nesting):
             continue
         code_examples_grouping[module_name] |= get_code_examples(function_obj)
