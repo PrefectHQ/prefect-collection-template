@@ -9,7 +9,8 @@ from textwrap import dedent
 import mkdocs_gen_files
 from prefect.blocks.core import Block
 from prefect.utilities.dispatch import get_registry_for_type
-from prefect.utilities.importtools import from_qualified_name, to_qualified_name
+from prefect.utilities.importtools import (from_qualified_name,
+                                           to_qualified_name)
 
 COLLECTION_SLUG = "{{ cookiecutter.collection_slug }}"
 
@@ -42,7 +43,7 @@ def insert_blocks_catalog(generated_file):
             `{{ cookiecutter.collection_name }}`.
 
             To register blocks in this module to
-            [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
+            [view and edit them](https://docs.prefect.io/ui/blocks/)
             on Prefect Cloud, first [install the required packages](
             https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/#installation),
             then
@@ -54,8 +55,8 @@ def insert_blocks_catalog(generated_file):
     )
     generated_file.write(
         "Note, to use the `load` method on Blocks, you must already have a block document "  # noqa
-        "[saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) "  # noqa
-        "or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).\n"
+        "[saved through code](https://docs.prefect.io/concepts/blocks/#saving-blocks) "  # noqa
+        "or [saved through the UI](https://docs.prefect.io/ui/blocks/).\n"
     )
     for module_nesting, block_names in module_blocks.items():
         module_path = f"{COLLECTION_SLUG}." + " ".join(module_nesting)

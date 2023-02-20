@@ -37,7 +37,7 @@ from prefect import flow, get_run_logger
 
 ## Resources
 
-For more tips on how to use tasks and flows in a Collection, check out [Using Collections](https://orion-docs.prefect.io/collections/usage/)!
+For more tips on how to use tasks and flows in a Collection, check out [Using Collections](https://docs.prefect.io/collections/usage/)!
 
 ### Installation
 
@@ -51,11 +51,11 @@ Requires an installation of Python 3.7+.
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
 
-These tasks are designed to work with Prefect 2.0. For more information about how to use Prefect, please refer to the [Prefect documentation](https://orion-docs.prefect.io/).
+These tasks are designed to work with Prefect 2.0. For more information about how to use Prefect, please refer to the [Prefect documentation](https://docs.prefect.io/).
 
 <!--- ### Saving credentials to block
 
-Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://orion-docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://orion-docs.prefect.io/ui/blocks/).
+Note, to use the `load` method on Blocks, you must already have a block document [saved through code](https://docs.prefect.io/concepts/blocks/#saving-blocks) or [saved through the UI](https://docs.prefect.io/ui/blocks/).
 
 Below is a walkthrough on saving block documents through code.
 
@@ -80,7 +80,7 @@ Block.load("BLOCK_NAME_PLACEHOLDER")
 !!! info "Registering blocks"
 
     Register blocks in this module to
-    [view and edit them](https://orion-docs.prefect.io/ui/blocks/)
+    [view and edit them](https://docs.prefect.io/ui/blocks/)
     on Prefect Cloud:
 
     ```bash
