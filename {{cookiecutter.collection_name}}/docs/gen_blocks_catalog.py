@@ -9,8 +9,7 @@ from textwrap import dedent
 import mkdocs_gen_files
 from prefect.blocks.core import Block
 from prefect.utilities.dispatch import get_registry_for_type
-from prefect.utilities.importtools import (from_qualified_name,
-                                           to_qualified_name)
+from prefect.utilities.importtools import from_qualified_name, to_qualified_name
 
 COLLECTION_SLUG = "{{ cookiecutter.collection_slug }}"
 
