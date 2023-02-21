@@ -7,7 +7,7 @@
         <img alt="PyPI" src="https://img.shields.io/pypi/v/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422"></a>
     <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/" alt="Stars">
         <img src="https://img.shields.io/github/stars/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
-    <a href="https://pepy.tech/badge/{{ cookiecutter.collection_name }}/" alt="Downloads">
+    <a href="https://pypistats.org/packages/{{ cookiecutter.collection_name }}/" alt="Downloads">
         <img src="https://img.shields.io/pypi/dm/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
     <a href="https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/{{ cookiecutter.github_organization }}/{{ cookiecutter.collection_name }}?color=0052FF&labelColor=090422" /></a>
