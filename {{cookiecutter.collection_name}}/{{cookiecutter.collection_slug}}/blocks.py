@@ -22,6 +22,7 @@ class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block
     _block_type_name = "{{ cookiecutter.collection_name.split('-')[1:] | join(' ') }}"
     # replace this with a relevant logo; defaults to Prefect logo
     _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/08yCE6xpJMX9Kjl5VArDS/c2ede674c20f90b9b6edeab71feffac9/prefect-200x200.png?h=250"  # noqa
+    _documentation_url = "https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.collection_name }}/blocks/#{{ cookiecutter.collection_name }}.blocks.{{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block"  # noqa
 
     value: str = Field("The default value", description="The value to store.")
 
