@@ -31,5 +31,5 @@ jobs:
 
       - name: Run tests
         run: |
-          export PREFECT_ORION_DATABASE_CONNECTION_URL="sqlite+aiosqlite:///$(pwd)/orion-tests.db"
+          export PREFECT_SERVER_DATABASE_CONNECTION_URL="sqlite+aiosqlite:///$(pwd)/collection-tests.db"
           pytest tests -vv
