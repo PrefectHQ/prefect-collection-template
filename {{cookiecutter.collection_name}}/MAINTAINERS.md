@@ -6,7 +6,7 @@ Now that you've bootstrapped a project, follow the steps below to get started de
 
 ### Python setup
 
-Requires an installation of Python 3.7+
+Requires an installation of Python 3.8+
 
 We recommend using a Python virtual environment manager such as pipenv, conda or virtualenv.
 
