@@ -1,7 +1,12 @@
 """This is an example blocks module"""
 
 from prefect.blocks.core import Block
-from pydantic import Field
+from pydantic import VERSION as PYDANTIC_VERSION
+
+if PYDANTIC_VERSION.startswith("2."):
+    from pydantic.v1 import Field
+else:
+    from pydantic import Field
 
 
 class {{ cookiecutter.collection_name.split('-')[1:] | join | title}}Block(Block):
